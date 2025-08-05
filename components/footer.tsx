@@ -5,20 +5,27 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Github, Heart, ExternalLink } from 'lucide-react';
 
-const footerLinks = {
-  "Tools": [
+// Link ka type define
+interface FooterLink {
+  name: string;
+  href: string;
+  external?: boolean;
+}
+
+const footerLinks: Record<string, FooterLink[]> = {
+  Tools: [
     { name: "Follower Counter", href: "/follower-counter" },
     { name: "README Designer", href: "/readme-designer" },
     { name: "Following Analysis", href: "/following-analysis" },
     { name: "Profile Compare", href: "/profile-compare" },
   ],
-  "Resources": [
+  Resources: [
     { name: "Documentation", href: "/documentation" },
     { name: "FAQ", href: "/faq" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ],
-  "Community": [
+  Community: [
     { name: "GitHub", href: "https://github.com/codewithdhruba01", external: true },
     { name: "Discord", href: "dhrubarajpati", external: true },
     { name: "Twitter", href: "https://x.com/codewithdhruba", external: true },
@@ -58,7 +65,7 @@ export function Footer() {
                     <Link
                       href={link.href}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-                      {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
+                      {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     >
                       {link.name}
                       {link.external && <ExternalLink className="h-3 w-3" />}
@@ -72,7 +79,7 @@ export function Footer() {
 
         <div className="border-t border-border/40 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Made with <Heart className="h-4 w-4 text-red-500" /> by Dhrubaraj Pati, for developers
+            Made with <Heart className="h-4 w-4 text-red-500" /> by Dhrubaraj Pati for developers
           </p>
           <p className="text-sm text-muted-foreground mt-2 md:mt-0">
             © 2025 GitHub Tools Pro. All rights reserved.
