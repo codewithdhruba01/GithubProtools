@@ -116,10 +116,35 @@ const documentationSections = [
 const chapterContent: ChapterContent = {
   'getting-started': {
     'What is Git?': {
-      content: `Git is a distributed version control system ...`,
+      content: `<p>Git is a <strong>distributed version control system (DVCS)</strong> used to track changes in files and coordinate work between multiple people.</p>
+      <p><strong>What Git does:</strong></p>
+    <ul>
+       Keeps a complete history of every change made to your files Allows you to go back to previous versions at any time</li>
+       Lets multiple developers work together without overwriting each other's work makes branching easy so you can experiment without breaking the main code</li>
+   </ul>
+    <p><strong>Why developers use Git:</strong></p>
+   <ul>
+    <li><strong>Collaboration:</strong> Teams can work on the same codebase efficiently</li>
+    <li><strong>Backup:</strong> Your history is stored locally and can also be pushed to remote servers like GitHub</li>
+    <li><strong>Experimentation:</strong> Try new features safely in branches</li>
+    <li><strong>Version tracking:</strong> See exactly who changed what and when</li>
+   </ul>
+      `,
       commands: [
-        { command: 'git --version', description: 'Check Git version' },
-        { command: 'git help', description: 'Get help with Git commands' }
+        { command: "git --version", description: "Check installed Git version" },
+        { command: "git help", description: "Get help with Git commands" },
+        { command: "git init", description: "Initialize a new Git repository in the current folder" },
+        { command: "git status", description: "Check which files are changed and ready to commit" },
+        { command: "git add <file>", description: "Stage specific file(s) for commit" },
+        { command: "git add .", description: "Stage all changes for commit" },
+        { command: 'git commit -m "message"', description: "Save staged changes with a message" },
+        { command: "git log", description: "View commit history" },
+        { command: "git branch", description: "List all branches" },
+        { command: "git checkout -b <branch-name>", description: "Create and switch to a new branch" },
+        { command: "git merge <branch-name>", description: "Merge changes from another branch into the current branch" },
+        { command: "git remote add origin <repo-url>", description: "Connect local repo to remote repository" },
+        { command: "git push origin main", description: "Push changes to the main branch on remote" },
+        { command: "git pull", description: "Fetch and merge changes from remote repository" }
       ]
     },
     'What is GitHub?': {
