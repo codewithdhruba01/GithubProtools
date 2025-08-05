@@ -12,7 +12,6 @@ import {
   GitBranch, 
   Github, 
   Terminal, 
-  FileText, 
   Users, 
   Settings,
   ChevronRight,
@@ -20,6 +19,18 @@ import {
   Code,
   Zap
 } from 'lucide-react';
+
+type Command = {
+  command: string;
+  description: string;
+};
+
+type Chapter = {
+  content: string;
+  commands?: Command[];
+};
+
+type ChapterContent = Record<string, Record<string, Chapter>>;
 
 const documentationSections = [
   {
@@ -102,62 +113,17 @@ const documentationSections = [
   }
 ];
 
-const chapterContent = {
+const chapterContent: ChapterContent = {
   'getting-started': {
     'What is Git?': {
-      content: `Git is a distributed version control system that tracks changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development.
-
-## Key Features of Git:
-
-**Distributed Architecture**: Every Git repository is a complete backup of the codebase, including full history.
-
-**Branching and Merging**: Git makes it easy to create branches for features and merge them back.
-
-**Speed**: Git is optimized for performance and can handle large projects efficiently.
-
-**Data Integrity**: Everything in Git is checksummed before it's stored and referenced by that checksum.
-
-## Why Use Git?
-
-- **Track Changes**: See exactly what changed, when, and by whom
-- **Collaborate**: Multiple developers can work on the same project simultaneously
-- **Backup**: Distributed nature means every clone is a full backup
-- **Branching**: Experiment with features without affecting main codebase
-- **History**: Complete project history is always available`,
-      
+      content: `Git is a distributed version control system ...`,
       commands: [
         { command: 'git --version', description: 'Check Git version' },
         { command: 'git help', description: 'Get help with Git commands' }
       ]
     },
     'What is GitHub?': {
-      content: `GitHub is a web-based hosting service for Git repositories. It provides all the functionality of Git along with additional features for collaboration, project management, and software development.
-
-## GitHub Features:
-
-**Repository Hosting**: Store your Git repositories in the cloud with unlimited public repositories.
-
-**Collaboration Tools**: Issues, pull requests, and project boards for team coordination.
-
-**GitHub Actions**: Built-in CI/CD for automated testing and deployment.
-
-**GitHub Pages**: Free web hosting for static websites directly from repositories.
-
-**Community Features**: Follow developers, star repositories, and contribute to open source.
-
-## GitHub vs Git:
-
-- **Git**: The version control system (software)
-- **GitHub**: A cloud service that hosts Git repositories
-
-## Benefits of Using GitHub:
-
-- **Remote Backup**: Your code is safely stored in the cloud
-- **Collaboration**: Easy sharing and collaboration with team members
-- **Portfolio**: Showcase your projects and contributions
-- **Open Source**: Contribute to and learn from open source projects
-- **Professional Network**: Connect with other developers worldwide`,
-      
+      content: `GitHub is a web-based hosting service ...`,
       commands: [
         { command: 'git remote -v', description: 'View configured remotes' },
         { command: 'git push origin main', description: 'Push to GitHub repository' }
@@ -166,29 +132,7 @@ const chapterContent = {
   },
   'git-basics': {
     'Git init and clone': {
-      content: `Learn how to initialize new repositories and clone existing ones.
-
-## Initializing a New Repository
-
-The \`git init\` command creates a new Git repository. It can be used to initialize a new repository in an existing directory or create a new directory with a Git repository.
-
-## Cloning Existing Repositories
-
-The \`git clone\` command creates a copy of a remote repository on your local machine, including all files, branches, and commit history.
-
-## When to Use Each:
-
-- **git init**: When starting a new project from scratch
-- **git clone**: When working on an existing project or contributing to open source
-
-## Repository Structure:
-
-After initialization, Git creates a \`.git\` directory containing:
-- Object database
-- Configuration files
-- Branch information
-- Commit history`,
-      
+      content: `Learn how to initialize new repositories and clone existing ones...`,
       commands: [
         { command: 'git init', description: 'Initialize a new Git repository' },
         { command: 'git init project-name', description: 'Create new directory and initialize' },
@@ -200,8 +144,8 @@ After initialization, Git creates a \`.git\` directory containing:
 };
 
 export default function Documentation() {
-  const [selectedSection, setSelectedSection] = useState('getting-started');
-  const [selectedChapter, setSelectedChapter] = useState('What is Git?');
+  const [selectedSection, setSelectedSection] = useState<string>('getting-started');
+  const [selectedChapter, setSelectedChapter] = useState<string>('What is Git?');
 
   const currentSection = documentationSections.find(s => s.id === selectedSection);
   const currentContent = chapterContent[selectedSection]?.[selectedChapter];
@@ -209,6 +153,7 @@ export default function Documentation() {
   return (
     <div className="min-h-screen pt-20 pb-12">
       <div className="container mx-auto px-4">
+        {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -411,27 +356,17 @@ export default function Documentation() {
                 <div>
                   <h4 className="font-semibold mb-3">First Time Setup</h4>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between items-center">
-                      <code className="bg-muted px-2 py-1 rounded">git config --global user.name "Your Name"</code>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <code className="bg-muted px-2 py-1 rounded">git config --global user.email "you@example.com"</code>
-                    </div>
+                    <code className="bg-muted px-2 py-1 rounded">git config --global user.name Your Name</code>
+                    <code className="bg-muted px-2 py-1 rounded">git config --global user.email you@example.com</code>
                   </div>
                 </div>
                 
                 <div>
                   <h4 className="font-semibold mb-3">Daily Workflow</h4>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between items-center">
-                      <code className="bg-muted px-2 py-1 rounded">git add .</code>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <code className="bg-muted px-2 py-1 rounded">git commit -m "message"</code>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <code className="bg-muted px-2 py-1 rounded">git push origin main</code>
-                    </div>
+                    <code className="bg-muted px-2 py-1 rounded">git add .</code>
+                    <code className="bg-muted px-2 py-1 rounded">git commit -m message</code>
+                    <code className="bg-muted px-2 py-1 rounded">git push origin main</code>
                   </div>
                 </div>
               </div>
