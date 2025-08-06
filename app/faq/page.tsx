@@ -343,7 +343,7 @@ export default function FAQ() {
             <CardHeader className="text-center">
               <CardTitle>Still Have Questions?</CardTitle>
               <CardDescription>
-                Can't find the answer you're looking for? We're here to help!
+                Cant find the answer you are looking for? We are here to help!
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center space-y-4">
