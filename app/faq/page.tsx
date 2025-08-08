@@ -340,29 +340,35 @@ export default function FAQ() {
           className="max-w-2xl mx-auto mt-16"
         >
           <Card>
-            <CardHeader className="text-center">
-              <CardTitle>Still Have Questions?</CardTitle>
-              <CardDescription>
-                Cant find the answer you are looking for? We are here to help!
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="text-center space-y-4">
-              <p className="text-muted-foreground">
-                Our team is always happy to help with any questions, suggestions, or issues you might have.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors p-2">
-                  📧 Contact Support
-                </Badge>
-                <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors p-2">
-                  💬 Join Community
-                </Badge>
-                <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors p-2">
-                  🐛 Report Bug
-                </Badge>
-              </div>
-            </CardContent>
-          </Card>
+  <CardHeader className="text-center">
+    <CardTitle>Still Have Questions?</CardTitle>
+    <CardDescription>
+      Cant find the answer you are looking for? We are here to help!
+    </CardDescription>
+  </CardHeader>
+  <CardContent className="text-center space-y-4">
+    <p className="text-muted-foreground">
+      Our team is always happy to help with any questions, suggestions, or issues you might have.
+    </p>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:pati.dhrubaraj@outlook.com" target="_blank" rel="noopener noreferrer">
+        <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors p-2">
+          📧 Contact Support
+        </Badge>
+      </a>
+      <a href="https://www.linkedin.com/in/dhrubaraj-pati/" target="_blank" rel="noopener noreferrer">
+        <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors p-2">
+          💬 Join Community
+        </Badge>
+      </a>
+      <a href="https://github.com/codewithdhruba01/GithubProtools/issues" target="_blank" rel="noopener noreferrer">
+        <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors p-2">
+          🐛 Report Bug
+        </Badge>
+      </a>
+    </div>
+  </CardContent>
+</Card>
         </motion.div>
       </div>
     </div>
