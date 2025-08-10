@@ -124,10 +124,10 @@ const chapterContent: ChapterContent = {
    </ul>
     <p><strong>Why developers use Git:</strong></p>
    <ul>
-    <li><strong>Collaboration:</strong> Teams can work on the same codebase efficiently</li>
-    <li><strong>Backup:</strong> Your history is stored locally and can also be pushed to remote servers like GitHub</li>
-    <li><strong>Experimentation:</strong> Try new features safely in branches</li>
-    <li><strong>Version tracking:</strong> See exactly who changed what and when</li>
+    <li>• <strong>Collaboration:</strong> Teams can work on the same codebase efficiently</li>
+    <li>• <strong>Backup:</strong> Your history is stored locally and can also be pushed to remote servers like GitHub</li>
+    <li>• <strong>Experimentation:</strong> Try new features safely in branches</li>
+    <li>• <strong>Version tracking:</strong> See exactly who changed what and when</li>
    </ul>
       `,
       commands: [
@@ -148,25 +148,218 @@ const chapterContent: ChapterContent = {
       ]
     },
     'What is GitHub?': {
-      content: `GitHub is a web-based hosting service ...`,
+      content: `GitHub is an online platform where developers store, share, and collaborate on code projects.
+       It’s built around Git, which is a version control system that keeps track of changes in your code over time.
+       <p><strong>breakdown:</strong></p>
+      <ul>
+          <li>• <strong>Code Hosting - </strong> You can upload your projects (repositories) so they’re stored safely online </li>
+          <li>• <strong>Version Control - </strong> Every change you make is tracked, so you can roll back if something breaks. </li>
+          <li>• <strong>Collaboration - </strong> Multiple people can work on the same project without overwriting each other’s work. </li>
+          <li>• <strong>Pull Requests - </strong> A way to propose changes to a project, review them, and merge them in when approved.</li>
+          <li>• <strong>Issues & Project Boards - </strong> Tools for reporting bugs, tracking tasks, and organizing work.</li>
+          <li>• <strong>Community - </strong> You can explore open-source projects, contribute to others’ code, or showcase your own.</li>
+      </ul>
+       `,
       commands: [
         { command: 'git remote -v', description: 'View configured remotes' },
         { command: 'git push origin main', description: 'Push to GitHub repository' }
       ]
-    }
+    },
+    'Installing Git': {
+      content: `
+      <p>To use Git, you first need to install it on your system. Git is available for Windows, macOS, and Linux.</p>
+
+      <h3> <strong> Installing Git on Different Platforms: </strong> </h3>
+
+      <strong>1. Windows: </strong>
+      <div class="mb-4">
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220513224110/1.PNG" class="rounded-lg shadow-md" />
+      </div>
+      <ul>
+        <li>• Go to the official Git website: <a href="https://git-scm.com/downloads/win" target="_blank">Link</a> Click "Downlode" and wait for the process to complete. </li>
+        <li>• The download should start automatically. </li>
+      </ul>
+      <h3>  Double-click the <code> .exe </code> file. </h3>
+      <div class="mb-4">
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220513225003/2.png" class="rounded-lg shadow-md" />
+      </div>
+      <ul>
+      <ul>
+        <li>• Step 3: Check the GNU General Public License and click Next. </li>
+        <div class="mb-4">
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220513230934/4.PNG" class="rounded-lg shadow-md" />
+      </div>
+        <li>• A screen for component selection will display. Leave the settings as it is and click Next. </li>
+
+         <div class="mb-4">
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220513231157/5.PNG" class="rounded-lg shadow-md" />
+      </div>
+        </ul>
+      <h3> <strong> Important choices: </strong> </h3>
+      <ul>
+        <li>• <strong> Editor selection: </strong> You can choose Nano (default) or VS Code if installed. </li>
+        <li>• <strong> PATH environment: </strong> Choose "Git from the command line and also from 3rd-party software". </li>
+        <li>• <strong> Line endings: </strong> Choose "Checkout Windows-style, commit Unix-style" (recommended). </li>
+        <li>• Leave other default options unless you know you need a specific setup.</li>
+      </ul>
+
+      <h3> <strong> Finish Installation: </strong> </h3>
+      <ul>
+        <li>• Click Finish. </li>
+        <li>• Open Command Prompt or PowerShell.</li>
+      </ul>
+       `,
+      commands: [
+        { command: "git --version", description: "Check installed Windows Git version" },
+        { command: "brew install git", description: "Install Git on macOS with Homebrew" },
+        { command: "sudo apt install git", description: "Install Git on Ubuntu/Debian" }
+      ]
+    },
+    'Setting up GitHub account': {
+  content: `GitHub is an online platform where developers store, share, and collaborate on code projects.
+  It’s built around Git, which is a version control system that keeps track of changes in your code over time.
+  
+  <p><strong>Step 1 — Create a GitHub Account</strong></p>
+  <ul>
+      <li>• Go to <a href="https://github.com" target="_blank">https://github.com</a>.</li>
+      <li>• Click <strong>Sign up</strong> (top-right corner).</li>
+      <li>• Fill in your username, email address, and password.</li>
+      <li>• Solve the CAPTCHA and click <strong>Create account</strong>.</li>
+      <li>• Verify your email by clicking the link GitHub sends you.</li>
+  </ul>
+
+  <p><strong>Step 2 — Choose Your Plan</strong></p>
+  <ul>
+      <li>• Select the <strong>Free</strong> plan (perfect for beginners).</li>
+      <li>• Paid plans have more features, but Free allows unlimited public and private repositories.</li>
+  </ul>
+
+  <p><strong>Step 3 — Set Up Your Profile</strong></p>
+  <ul>
+      <li>• Add a profile picture and short bio.</li>
+      <li>• Optionally, include your website or portfolio link.</li>
+  </ul>
+
+  <p><strong>Step 4 — Install Git on Your Computer</strong></p>
+  <ul>
+      <li>• Windows: Download from <a href="https://git-scm.com/downloads" target="_blank">git-scm.com</a> and install.</li>
+      <li>• Mac: Run <code>brew install git</code> in Terminal.</li>
+      <li>• Linux (Debian/Ubuntu): Run <code>sudo apt install git</code>.</li>
+  </ul>
+
+  <p><strong>Step 5 — Configure Git</strong></p>
+
+  <p><strong>Step 6 — Connect GitHub to Your Computer</strong></p>
+  <ul>
+      <li>• <strong>HTTPS Method</strong> (simple) — Use Personal Access Token as password when pushing code.</li>
+      <li>• <strong>SSH Method</strong> (no password every time) — Add your SSH key in GitHub settings.</li>
+  </ul>
+  `,
+  commands: [
+    { command: 'git remote -v', description: 'View configured remotes' },
+    { command: 'git push origin main', description: 'Push to GitHub repository' },
+    { command: 'git config --global user.name "Your Name"', description: 'Set your Git username' },
+    { command: 'git config --global user.email "youremail@example.com"', description: 'Set your Git email' }
+  ]
+},
+
+'First repository': {
+  content: `
+  <p><strong>Step 1 — Open GitHub and Log In</strong></p>
+  <ul>
+      <li>• Go to <a href="https://github.com" target="_blank">https://github.com</a> and log in with your account.</li>
+  </ul>
+  <img src="https://community.cyberpanel.net/uploads/default/original/2X/1/127e91b046805771274ed8936250082fd5e282d9.jpeg" alt="GitHub Home Page" style="max-width: 100%; border: 1px solid #ddd; border-radius: 6px; margin: 10px 0;">
+
+  <p><strong>Step 2 — Click the <code>+</code> Button</strong></p>
+  <ul>
+      <li>• On the top-right corner, click the <code>+</code> icon and select <strong>New repository</strong>.</li>
+  </ul>
+  <img src="https://kinsta.com/wp-content/uploads/2023/02/create-github-repository-1024x505.png" alt="New Repository Button" style="max-width: 100%; border: 1px solid #ddd; border-radius: 6px; margin: 10px 0;">
+
+  <p><strong>Step 3 — Fill in Repository Details</strong></p>
+  <ul>
+      <li>• <strong>Repository name:</strong> Choose a unique name (e.g., <code>my-first-project</code>).</li>
+      <li>• <strong>Description:</strong> (Optional) Write a short description of your project.</li>
+      <li>• <strong>Visibility:</strong> Choose <em>Public</em> (anyone can see it) or <em>Private</em> (only you & collaborators can see it).</li>
+      <li>• (Optional) Tick <strong>Initialize this repository with a README</strong> so GitHub creates a default README file.</li>
+  </ul>
+  <img src="https://www.w3schools.com/git/img_github_new_repo_create.png" alt="Create Repository Form" style="max-width: 100%; border: 1px solid #ddd; border-radius: 6px; margin: 10px 0;">
+
+  <p><strong>Step 4 — Create the Repository</strong></p>
+  <ul>
+      <li>• Scroll down and click the green <strong>Create repository</strong> button.</li>
+  </ul>
+
+  <p><strong>Step 5 — Next Steps</strong></p>
+  <ul>
+      <li>• GitHub will show you instructions to upload code from your computer.</li>
+      <li>• Copy the repository link for use in your terminal (HTTPS or SSH).</li>
+  </ul>
+  <img src="https://leading-bell-3e1c02e64d.media.strapiapp.com/Z_4jtk_b774c7fd29.png" alt="New Repository Page" style="max-width: 100%; border: 1px solid #ddd; border-radius: 6px; margin: 10px 0;">
+  `,
+  commands: [
+    { command: 'git init', description: 'Initialize a local Git repository' },
+    { command: 'git add .', description: 'Stage all changes' },
+    { command: 'git commit -m "First commit"', description: 'Commit changes with a message' },
+    { command: 'git branch -M main', description: 'Rename default branch to main' },
+    { command: 'git remote add origin <repo-link>', description: 'Connect local repo to GitHub' },
+    { command: 'git push -u origin main', description: 'Push local code to GitHub' }
+  ]
+}
+
   },
   'git-basics': {
     'Git init and clone': {
-      content: `Learn how to initialize new repositories and clone existing ones...`,
-      commands: [
-        { command: 'git init', description: 'Initialize a new Git repository' },
-        { command: 'git init project-name', description: 'Create new directory and initialize' },
-        { command: 'git clone https://github.com/user/repo.git', description: 'Clone a remote repository' },
-        { command: 'git clone https://github.com/user/repo.git my-folder', description: 'Clone to specific folder' }
-      ]
+    content: `
+    <p><strong>Step 1 — Initialize a New Repository (Local to GitHub)</strong></p>
+    <ul>
+        <li>• Navigate to your project folder in your terminal.</li>
+        <li>• Run <code>git init</code> to create a new local Git repository.</li>
+        <li>• Add files with <code>git add .</code>.</li>
+        <li>• Commit your changes with <code>git commit -m "First commit"</code>.</li>
+        <li>• Create a new repository on GitHub (without initializing with README if already have files locally).</li>
+        <li>• Link your local repository to GitHub with:
+            <pre><code>git remote add origin &lt;repo-link&gt;</code></pre>
+        </li>
+        <li>• Push your local code to GitHub:
+            <pre><code>git push -u origin main</code></pre>
+        </li>
+    </ul>
+
+    <p><strong>Step 2 — Clone an Existing Repository (GitHub to Local)</strong></p>
+    <ul>
+        <li>• Go to the repository page on GitHub.</li>
+        <li>• Click the green <strong>Code</strong> button and copy the HTTPS or SSH link.</li>
+        <li>• In your terminal, navigate to the folder where you want to save the project.</li>
+        <li>• Run:
+            <pre><code>git clone &lt;repo-link&gt;</code></pre>
+        </li>
+        <li>• This will create a new folder with all the repository files.</li>
+        <li>• Navigate into it:
+            <pre><code>cd &lt;repository-folder&gt;</code></pre>
+        </li>
+    </ul>
+
+    <p><strong>Notes:</strong></p>
+    <ul>
+        <li>• Use <code>git status</code> to check your current changes.</li>
+        <li>• Always commit changes before pushing to avoid errors.</li>
+        <li>• Ensure you have permission to push if it’s a private or shared repository.</li>
+    </ul>
+  `,
+  commands: [
+    { command: 'git init', description: 'Initialize a new local repository' },
+    { command: 'git add .', description: 'Stage all changes' },
+    { command: 'git commit -m "message"', description: 'Commit staged changes' },
+    { command: 'git remote add origin <repo-link>', description: 'Link local repository to remote' },
+    { command: 'git push -u origin main', description: 'Push code to GitHub main branch' },
+    { command: 'git clone <repo-link>', description: 'Clone a repository from GitHub' },
+    { command: 'git status', description: 'Check status of your repository' }
+  ]
+     },
     }
   }
-};
 
 export default function Documentation() {
   const [selectedSection, setSelectedSection] = useState<string>('getting-started');
