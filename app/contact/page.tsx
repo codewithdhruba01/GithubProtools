@@ -15,6 +15,7 @@ import {
   Github, 
   Twitter, 
   MapPin,
+  Linkedin,
   Clock,
   Phone,
   Loader2
@@ -245,7 +246,7 @@ export default function Contact() {
                 href="https://github.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                className="flex items-center gap-6 bg-[#161616] p-3 rounded-lg hover:bg-muted/50 transition-colors group"
               >
                 <Github className="h-5 w-5 group-hover:scale-110 transition-transform" />
                 <div>
@@ -256,9 +257,21 @@ export default function Contact() {
 
               <a 
                 href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-6 p-3 bg-[#161616] rounded-lg hover:bg-muted/50 transition-colors group"
+              >
+                <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                <div>
+                  <div className="font-medium">Linkedin</div>
+                  <div className="text-sm text-muted-foreground">Latest Tech updates</div>
+                </div>
+              </a>
+              <a 
+                href="https://twitter.com"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                className="flex items-center gap-6 p-3 bg-[#161616] rounded-lg hover:bg-muted/50 transition-colors group"
               >
                 <Twitter className="h-5 w-5 group-hover:scale-110 transition-transform" />
                 <div>

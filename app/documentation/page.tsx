@@ -39,6 +39,7 @@ const documentationSections = [
     icon: Play,
     description: 'Learn the basics of Git and GitHub',
     chapters: [
+      'Introduction',
       'What is Git?',
       'What is GitHub?',
       'Installing Git',
@@ -115,6 +116,29 @@ const documentationSections = [
 
 const chapterContent: ChapterContent = {
   'getting-started': {
+    'Introduction': {
+      content: `Welcome to the Ultimate Git Guide, your go-to resource for mastering Git, the industry-standard version control system. Inside, you’ll find clear explanations of Git commands 
+       with detailed flags and real-world examples. Learn not just how to use commands like git add, git commit, and git rebase, but also when and why to apply them in real-world scenarios—whether you're working solo, collaborating with a team, or contributing to open-source projects. We’ve included tips and tricks for maintaining a clean 
+       commit history, resolving merge conflicts, and using Git’s reset and revert features to undo mistakes and fix bugs. You’ll also explore advanced Git features that can boost your productivity and make troubleshooting easier  With practical advice and best practices, this guide will help you streamline your Git workflow and use Git like a pro. 
+       Let’s get started!
+      `,
+      commands: [
+        { command: "git --version", description: "Check installed Git version" },
+        { command: "git help", description: "Get help with Git commands" },
+        { command: "git init", description: "Initialize a new Git repository in the current folder" },
+        { command: "git status", description: "Check which files are changed and ready to commit" },
+        { command: "git add <file>", description: "Stage specific file(s) for commit" },
+        { command: "git add .", description: "Stage all changes for commit" },
+        { command: 'git commit -m "message"', description: "Save staged changes with a message" },
+        { command: "git log", description: "View commit history" },
+        { command: "git branch", description: "List all branches" },
+        { command: "git checkout -b <branch-name>", description: "Create and switch to a new branch" },
+        { command: "git merge <branch-name>", description: "Merge changes from another branch into the current branch" },
+        { command: "git remote add origin <repo-url>", description: "Connect local repo to remote repository" },
+        { command: "git push origin main", description: "Push changes to the main branch on remote" },
+        { command: "git pull", description: "Fetch and merge changes from remote repository" }
+      ]
+    },
     'What is Git?': {
       content: `<p>Git is a <strong>distributed version control system (DVCS)</strong> used to track changes in files and coordinate work between multiple people.</p>
       <p><strong>What Git does:</strong></p>
