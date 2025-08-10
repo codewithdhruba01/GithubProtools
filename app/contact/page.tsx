@@ -104,7 +104,7 @@ export default function Contact() {
     <div className="container py-8 max-w-6xl mx-auto">
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold tracking-tight mb-4">
-          Contact Us
+          Contact <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">Us</span>
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Have questions, suggestions, or need help? We d love to hear from you!
@@ -261,7 +261,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-6 p-3 bg-[#161616] rounded-lg hover:bg-muted/50 transition-colors group"
               >
-                <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform text-[#407cff]" />
                 <div>
                   <div className="font-medium">Linkedin</div>
                   <div className="text-sm text-muted-foreground">Latest Tech updates</div>
@@ -273,7 +273,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-6 p-3 bg-[#161616] rounded-lg hover:bg-muted/50 transition-colors group"
               >
-                <Twitter className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                <Twitter className="h-5 w-5 group-hover:scale-110 transition-transform text-[#2eb5f3]" />
                 <div>
                   <div className="font-medium">Twitter</div>
                   <div className="text-sm text-muted-foreground">Latest updates</div>
@@ -312,7 +312,7 @@ export default function Contact() {
           <span className="text-sm text-muted-foreground">
             Looking for quick answers? Check our
           </span>
-          <a href="/faq" className="text-sm font-medium text-primary hover:underline">
+          <a href="/faq" className="text-sm font-medium text-primary hover:text-[#036e03]">
             FAQ section
           </a>
         </div>
