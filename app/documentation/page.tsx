@@ -373,6 +373,41 @@ const chapterContent: ChapterContent = {
     </ul>
   `,
   commands: [
+    { command: 'git add <file>', description: 'Stage a specific file' },
+    { command: 'git add .', description: 'Stage all changed files in the current directory' },
+    { command: 'git commit -m "message"', description: 'Save staged changes with a message' },
+    { command: 'git status', description: 'Show which files are staged, modified, or untracked' }
+  ]
+     },
+
+     'Adding and committing': {
+      content: `
+    <p><strong>1. What is "Adding" in Git?</strong></p>
+    <ul>
+        <li>• When you create or change files in your project, Git notices the changes but doesn't save them yet.</li>
+        <li>• <code>git add</code> tells Git which changes you want to include in the next commit.</li>
+        <li>• This is called <em>staging</em> your changes.</li>
+        </li>
+    </ul>
+
+    <p><strong>2. What is "Committing" in Git?</strong></p>
+    <ul>
+        <li>• After staging your changes, you "commit" them to permanently save a snapshot in the repository’s history.</li>
+        <li>• A commit has a unique ID and includes a message describing the change.</li>
+        <li> Example:
+            <pre><code>git commit -m "Added new feature"</code></pre>
+        </li>
+        <li>• The commit message should be short but meaningful, so others know what was changed.</li>
+    </ul>
+
+    <p><strong>4. Tips:</strong></p>
+    <ul>
+        <li>• Always review staged changes with <code>git status</code> before committing.</li>
+        <li>• Commit small, logical changes instead of one big commit.</li>
+        <li>• Use clear commit messages (e.g., "Fixed navbar bug" instead of "update").</li>
+    </ul>
+  `,
+  commands: [
     { command: 'git init', description: 'Initialize a new local repository' },
     { command: 'git add .', description: 'Stage all changes' },
     { command: 'git commit -m "message"', description: 'Commit staged changes' },
@@ -380,6 +415,50 @@ const chapterContent: ChapterContent = {
     { command: 'git push -u origin main', description: 'Push code to GitHub main branch' },
     { command: 'git clone <repo-link>', description: 'Clone a repository from GitHub' },
     { command: 'git status', description: 'Check status of your repository' }
+  ]
+     },
+     'Viewing history': {
+      content: `
+    <p><strong>1. Why View Git History?</strong></p>
+    <ul>
+        <li>• Git history lets you see all past commits, who made them, when they were made, and what changes they included.</li>
+        <li>• Useful for tracking changes, debugging, and understanding project evolution.</li>
+    </ul>
+
+    <p><strong>2. Basic Commands to View History</strong></p>
+    <ul>
+        <li>• <code>git log</code> — Shows a full list of commits in reverse order (latest first).</li>
+        <li>• <code>git log --oneline</code> — Shorter view with one commit per line.</li>
+        <li>• <code>git log --graph --oneline --decorate</code> — Shows commits with branch/merge history in a visual graph.</li>
+    </ul>
+
+    <p><strong>3. Viewing Specific File History</strong></p>
+    <ul>
+        <li>• To see only commits affecting a specific file:
+            <pre><code>git log -- file.txt</code></pre>
+        </li>
+    </ul>
+
+    <p><strong>4. Viewing Commit Details</strong></p>
+    <ul>
+        <li>• <code>git show &lt;commit-hash&gt;</code> — Shows the changes made in a specific commit.</li>
+    </ul>
+
+    <p><strong>5. Tips:</strong></p>
+    <ul>
+        <li>• Press <code>q</code> to exit the log viewer.</li>
+        <li>• Use <code>git diff</code> to compare changes between commits.</li>
+        <li>• Combine filters for targeted searches, e.g.:
+            <pre><code>git log --author="Your Name" --since="2 weeks ago"</code></pre>
+        </li>
+    </ul>
+  `,
+  commands: [
+    { command: 'git log', description: 'View detailed commit history' },
+    { command: 'git log --oneline', description: 'Compact commit history view' },
+    { command: 'git log --graph --oneline --decorate', description: 'Visual commit history with branches' },
+    { command: 'git log -- file.txt', description: 'View history for a specific file' },
+    { command: 'git show <commit-hash>', description: 'Show details of a specific commit' }
   ]
      },
     }
