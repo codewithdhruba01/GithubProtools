@@ -16,7 +16,7 @@ import {
   Plus, 
   Trash2, 
   Code2, 
-  Palette,
+  WandSparkles,
   User,
   Star,
   Github,
@@ -215,7 +215,7 @@ export default function ReadmeDesigner() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Palette className="h-5 w-5" />
+                  <WandSparkles className="h-5 w-5" />
                   Design Your Profile
                 </CardTitle>
                 <CardDescription>
@@ -456,7 +456,7 @@ export default function ReadmeDesigner() {
                       <div className="text-center space-y-2">
                         <Eye className="h-12 w-12 mx-auto opacity-50" />
                         <p>Preview will appear here</p>
-                        <p className="text-sm">Click "Show Preview" to see your README</p>
+                        <p className="text-sm">Click Show Preview to see your README</p>
                       </div>
                     </motion.div>
                   )}

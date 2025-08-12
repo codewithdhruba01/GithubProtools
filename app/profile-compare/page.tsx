@@ -18,7 +18,7 @@ import {
   TrendingDown,
   Equal,
   Search,
-  ArrowRight,
+  ArrowRightLeft,
   Award,
   Activity
 } from 'lucide-react';
@@ -201,7 +201,7 @@ export default function ProfileCompare() {
                 disabled={loading}
               />
               <div className="flex items-center justify-center">
-                <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                <ArrowRightLeft className="h-4 w-4 text-muted-foreground" />
               </div>
               <Input
                 type="text"
@@ -319,7 +319,7 @@ export default function ProfileCompare() {
                       </Badge>
                     ) : (
                       <Badge variant="secondary" className="text-base px-4 py-2">
-                        🤝 It's a tie! Both profiles are equally strong
+                        🤝 Its a tie! Both profiles are equally strong
                       </Badge>
                     )}
                   </div>

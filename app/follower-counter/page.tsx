@@ -248,7 +248,7 @@ export default function FollowerCounter() {
               <Card className="max-w-4xl mx-auto">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5" />
+                    <TrendingUp className="h-5 w-5 text-[#029121]" />
                     Profile Insights
                   </CardTitle>
                 </CardHeader>
