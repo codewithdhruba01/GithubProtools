@@ -10,33 +10,38 @@ import {
   FileText, 
   GitCompare, 
   BookOpen,
+  GitCompareArrows,
   Heart,
   Zap,
   Shield,
   Rocket,
   Code,
   Target,
-  Award
+  Medal
 } from 'lucide-react';
 
 const features = [
   {
     icon: Users,
+    color: "text-blue-500",
     title: "Follower Analytics",
     description: "Real-time GitHub follower tracking with detailed insights and growth metrics."
   },
   {
     icon: FileText,
+    color: "text-green-500",
     title: "README Designer",
     description: "Create stunning profile READMEs with skills, stats, and social icons."
   },
   {
     icon: GitCompare,
+    color: "text-purple-500",
     title: "Profile Comparison",
     description: "Compare GitHub profiles side-by-side with improvement suggestions."
   },
   {
     icon: BookOpen,
+    color: "text-pink-500",
     title: "Comprehensive Documentation",
     description: "Complete Git and GitHub learning resources with step-by-step guides."
   }
@@ -45,31 +50,35 @@ const features = [
 const values = [
   {
     icon: Code,
+    color: "text-orange-500",
     title: "Developer-First",
     description: "Built by developers, for developers. We understand your workflow and needs."
   },
   {
     icon: Shield,
+    color: "text-green-600",
     title: "Privacy & Security",
     description: "We respect your privacy. No data is stored, and all API calls are transparent."
   },
   {
     icon: Zap,
+    color: "text-yellow-500",
     title: "Performance",
     description: "Fast, responsive, and reliable tools that don't slow down your productivity."
   },
   {
     icon: Heart,
+    color: "text-red-500",
     title: "Open Source Spirit",
     description: "Supporting the open source community and collaborative development."
   }
 ];
 
 const stats = [
-  { icon: Users, label: "Active Users", value: "50,000+" },
-  { icon: FileText, label: "READMEs Created", value: "25,000+" },
-  { icon: GitCompare, label: "Profiles Compared", value: "100,000+" },
-  { icon: Award, label: "GitHub Stars", value: "2,500+" }
+  { icon: Users, label: "Active Users", value: "50,000+", color: "blue-500" },
+  { icon: FileText, label: "READMEs Created", value: "25,000+", color: "green-500" },
+  { icon: GitCompareArrows, label: "Profiles Compared", value: "100,000+", color: "purple-500" },
+  { icon: Medal, label: "GitHub Stars", value: "2,500+", color: "red-500" }
 ];
 
 export default function About() {
@@ -128,10 +137,10 @@ export default function About() {
                 GitHub analytics and make professional profile management accessible to everyone.
               </p>
               <div className="flex flex-wrap justify-center gap-2 pt-4">
-                <Badge variant="secondary">Analytics</Badge>
-                <Badge variant="secondary">Optimization</Badge>
-                <Badge variant="secondary">Education</Badge>
-                <Badge variant="secondary">Community</Badge>
+                <Badge className="bg-green-700 text-[#eeeeee] hover:bg-green-600">Analytics</Badge>
+                <Badge className="bg-green-700 text-[#eeeeee] hover:bg-green-600">Optimization</Badge>
+                <Badge className="bg-green-700 text-[#eeeeee] hover:bg-green-600">Education</Badge>
+                <Badge className="bg-green-700 text-[#eeeeee] hover:bg-green-600">Community</Badge>
               </div>
             </CardContent>
           </Card>
@@ -162,7 +171,9 @@ export default function About() {
                 >
                   <Card className="text-center hover:shadow-lg transition-all duration-300">
                     <CardContent className="pt-6">
-                      <Icon className="h-8 w-8 mx-auto mb-2 text-primary" />
+                      <div className={`w-12 h-12 rounded-full bg-${stat.color}/20 flex items-center justify-center mx-auto mb-2`}>
+                        <Icon className={`h-6 w-6 text-${stat.color}`} />
+                      </div>
                       <div className="text-2xl font-bold">{stat.value}</div>
                       <div className="text-sm text-muted-foreground">{stat.label}</div>
                     </CardContent>
@@ -201,8 +212,8 @@ export default function About() {
                   <Card className="h-full hover:shadow-lg transition-all duration-300">
                     <CardHeader>
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <Icon className="h-5 w-5 text-primary" />
+                        <div className={`w-10 h-10 rounded-lg bg-${feature.color.replace("text-", "")}/20 flex items-center justify-center`}>
+                          <Icon className={`h-5 w-5 ${feature.color}`} />
                         </div>
                         <CardTitle className="text-lg">{feature.title}</CardTitle>
                       </div>
@@ -245,8 +256,8 @@ export default function About() {
                   <Card className="h-full hover:shadow-lg transition-all duration-300">
                     <CardHeader>
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <Icon className="h-5 w-5 text-primary" />
+                        <div className={`w-10 h-10 rounded-lg bg-${value.color.replace("text-", "")}/20 flex items-center justify-center`}>
+                          <Icon className={`h-5 w-5 ${value.color}`} />
                         </div>
                         <CardTitle className="text-lg">{value.title}</CardTitle>
                       </div>
@@ -288,15 +299,15 @@ export default function About() {
                   <div className="text-xs text-muted-foreground">React Framework</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mx-auto">
-                    <Zap className="h-6 w-6 text-purple-500" />
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto">
+                    <Zap className="h-6 w-6 text-white-500" />
                   </div>
                   <div className="text-sm font-medium">TypeScript</div>
                   <div className="text-xs text-muted-foreground">Type Safety</div>
                 </div>
                 <div className="space-y-2">
                   <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mx-auto">
-                    <Shield className="h-6 w-6 text-green-500" />
+                    <Shield className="h-6 w-6 text-sky-500" />
                   </div>
                   <div className="text-sm font-medium">Tailwind CSS</div>
                   <div className="text-xs text-muted-foreground">Styling</div>
@@ -323,7 +334,7 @@ export default function About() {
             <CardHeader>
               <CardTitle className="text-2xl">Get in Touch</CardTitle>
               <CardDescription>
-                Have questions, suggestions, or want to contribute? We'd love to hear from you!
+                Have questions, suggestions, or want to contribute? We love to hear from you!
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -332,12 +343,16 @@ export default function About() {
                 Your input helps us build better tools for everyone.
               </p>
               <div className="flex justify-center space-x-4">
-                <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                  📧 hello@githubtoolspro.com
-                </Badge>
-                <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                  🐙 GitHub Issues
-                </Badge>
+                <a href="mailto:pati.dhrubaraj@outlook.com">
+                  <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
+                    📧 Email
+                  </Badge>
+                </a>
+                <a href="https://github.com/codewithdhruba01/GithubProtools/issues" target="_blank" rel="noopener noreferrer">
+                  <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
+                    🐙 GitHub Issues
+                  </Badge>
+                </a>
               </div>
             </CardContent>
           </Card>

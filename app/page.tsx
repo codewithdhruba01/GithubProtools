@@ -58,10 +58,10 @@ const features = [
 ];
 
 const stats = [
-  { icon: Users, label: "Active Users", value: "50K+" },
-  { icon: Star, label: "GitHub Stars", value: "2.5K+" },
-  { icon: TrendingUp, label: "Profiles Analyzed", value: "100K+" },
-  { icon: Activity, label: "READMEs Created", value: "25K+" }
+  { icon: Users, label: "Active Users", value: "50K+", color: "text-blue-500" },
+  { icon: Star, label: "GitHub Stars", value: "2.5K+", color: "text-red-500" },
+  { icon: TrendingUp, label: "Profiles Analyzed", value: "100K+", color: "text-green-500" },
+  { icon: Activity, label: "READMEs Created", value: "25K+", color: "text-purple-500" }
 ];
 
 export default function Home() {
@@ -136,7 +136,7 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="text-center space-y-2"
                 >
-                  <Icon className="h-8 w-8 mx-auto text-primary" />
+                  <Icon className={`h-8 w-8 mx-auto ${stat.color}`} />
                   <div className="text-2xl font-bold">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </motion.div>
