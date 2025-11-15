@@ -2,6 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ----------------------------
+   GOOGLE FONTS IMPORT (THEME-SAFE)
+----------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Momo+Signature&family=Momo+Trust+Display&family=Pacifico&family=Saira:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&display=swap');
+
+/* ----------------------------
+   CUSTOM FONT CLASSES (Manual Use)
+----------------------------- */
+
+.font-archivo {
+  font-family: "Archivo Black", sans-serif;
+}
+
+.font-josefin {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.font-momo-sign {
+  font-family: "Momo Signature", cursive;
+}
+
+.font-momo-display {
+  font-family: "Momo Trust Display", sans-serif;
+}
+
+.font-pacifico {
+  font-family: "Pacifico", cursive;
+}
+
+.font-saira {
+  font-family: "Saira", sans-serif;
+}
+
+.font-stack {
+  font-family: "Stack Sans Text", sans-serif;
+}
+
+/* ----------------------------
+   THEME VARIABLES (NO CHANGE)
+----------------------------- */
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -44,6 +86,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
