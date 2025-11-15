@@ -96,7 +96,6 @@ export default function FollowingAnalysis() {
   return (
     <div className="min-h-screen pt-20 pb-12">
       <div className="container mx-auto px-4">
-
         {/* TITLE */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -148,13 +147,21 @@ export default function FollowingAnalysis() {
         {/* STATS CARDS */}
         {!loading && stats.following > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-
             {/* FOLLOWING */}
             <div className="p-6 rounded-xl border border-border/50 bg-white dark:bg-[#0f0f0f] dark:border-white/10 text-center hover:border-primary/20 transition">
               <div className="flex flex-col items-center gap-2">
-                <svg className="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" strokeWidth="2"
-                  viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M18 20a6 6 0 00-12 0" />
+                <svg
+                  className="w-8 h-8 text-blue-500"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M18 20a6 6 0 00-12 0"
+                  />
                   <circle cx="12" cy="7" r="4" />
                 </svg>
                 <div className="text-3xl font-bold">{stats.following}</div>
@@ -165,9 +172,18 @@ export default function FollowingAnalysis() {
             {/* FOLLOWERS */}
             <div className="p-6 rounded-xl border border-border/50 bg-white dark:bg-[#0f0f0f] dark:border-white/10 text-center hover:border-primary/20 transition">
               <div className="flex flex-col items-center gap-2">
-                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="2"
-                  viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 20a5 5 0 00-10 0M12 12a5 5 0 100-10 5 5 0 000 10z" />
+                <svg
+                  className="w-8 h-8 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17 20a5 5 0 00-10 0M12 12a5 5 0 100-10 5 5 0 000 10z"
+                  />
                 </svg>
                 <div className="text-3xl font-bold">{stats.followers}</div>
                 <p className="text-muted-foreground">Followers</p>
@@ -177,15 +193,25 @@ export default function FollowingAnalysis() {
             {/* NOT FOLLOWING BACK */}
             <div className="p-6 rounded-xl border border-border/50 bg-white dark:bg-[#0f0f0f] dark:border-white/10 text-center hover:border-primary/20 transition">
               <div className="flex flex-col items-center gap-2">
-                <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" strokeWidth="2"
-                  viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg
+                  className="w-8 h-8 text-red-500"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
-                <div className="text-3xl font-bold">{stats.notFollowingBack}</div>
+                <div className="text-3xl font-bold">
+                  {stats.notFollowingBack}
+                </div>
                 <p className="text-muted-foreground">Not Following Back</p>
               </div>
             </div>
-
           </div>
         )}
 
@@ -214,14 +240,12 @@ export default function FollowingAnalysis() {
                 <CardContent>
                   <ScrollArea className="h-[450px] pr-3">
                     <div className="space-y-4">
-
                       {notFollowingBack.map((user, index) => (
                         <motion.div
                           key={user.login}
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3, delay: index * 0.03 }}
-                          
                           className="
                             flex items-center justify-between p-4 rounded-lg
                             border border-border/50 bg-white
@@ -233,7 +257,6 @@ export default function FollowingAnalysis() {
                             dark:text-white
                           "
                         >
-                          
                           {/* LEFT */}
                           <div className="flex items-center gap-4">
                             <Avatar className="h-12 w-12">
@@ -277,10 +300,8 @@ export default function FollowingAnalysis() {
                               <ExternalLink className="w-4 h-4 text-black dark:text-white" />
                             </a>
                           </div>
-
                         </motion.div>
                       ))}
-
                     </div>
                   </ScrollArea>
                 </CardContent>
@@ -307,17 +328,19 @@ export default function FollowingAnalysis() {
             </CardHeader>
 
             <CardContent className="space-y-6">
-
               {/* Step 1 */}
               <div className="flex items-start gap-4">
                 <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
                   1
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Enter Your GitHub Username</h3>
+                  <h3 className="font-semibold text-lg">
+                    Enter Your GitHub Username
+                  </h3>
                   <p className="text-muted-foreground text-sm mt-1">
-                    Type your GitHub username in the search box and click the search button.
-                    The tool will fetch your followers & following list.
+                    Type your GitHub username in the search box and click the
+                    search button. The tool will fetch your followers &
+                    following list.
                   </p>
                 </div>
               </div>
@@ -328,9 +351,12 @@ export default function FollowingAnalysis() {
                   2
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Automatic Data Analysis</h3>
+                  <h3 className="font-semibold text-lg">
+                    Automatic Data Analysis
+                  </h3>
                   <p className="text-muted-foreground text-sm mt-1">
-                    The algorithm compares both lists and finds users who don’t follow you back.
+                    The algorithm compares both lists and finds users who don’t
+                    follow you back.
                   </p>
                 </div>
               </div>
@@ -341,9 +367,12 @@ export default function FollowingAnalysis() {
                   3
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">View Detailed Results</h3>
+                  <h3 className="font-semibold text-lg">
+                    View Detailed Results
+                  </h3>
                   <p className="text-muted-foreground text-sm mt-1">
-                    You will see user profiles, follower counts, and direct profile links.
+                    You will see user profiles, follower counts, and direct
+                    profile links.
                   </p>
                 </div>
               </div>
@@ -354,7 +383,9 @@ export default function FollowingAnalysis() {
                   4
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Visit Profiles Instantly</h3>
+                  <h3 className="font-semibold text-lg">
+                    Visit Profiles Instantly
+                  </h3>
                   <p className="text-muted-foreground text-sm mt-1">
                     Tap any profile to open them on GitHub directly.
                   </p>
@@ -371,11 +402,9 @@ export default function FollowingAnalysis() {
                   <li>• Results update instantly after every search</li>
                 </ul>
               </div>
-
             </CardContent>
           </Card>
         </motion.div>
-
       </div>
     </div>
   );
