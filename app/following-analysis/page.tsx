@@ -14,11 +14,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import {
-  Search,
-  ExternalLink,
-  TrendingDown,
-} from "lucide-react";
+import { Search, ExternalLink, TrendingDown } from "lucide-react";
 import { toast } from "sonner";
 
 // 🔥 FETCH ALL PAGINATED GITHUB DATA
@@ -64,12 +60,10 @@ export default function FollowingAnalysis() {
     setNotFollowingBack([]);
 
     try {
-      // Get all following users
       const followingList = await fetchAllPages(
         `https://api.github.com/users/${username.trim()}/following`
       );
 
-      // Get all followers
       const followersList = await fetchAllPages(
         `https://api.github.com/users/${username.trim()}/followers`
       );
@@ -78,12 +72,10 @@ export default function FollowingAnalysis() {
         followersList.map((u: GitHubUser) => u.login)
       );
 
-      // CORE LOGIC → You follow them but they don't follow you back
       let notFollowing = followingList.filter(
         (u: GitHubUser) => !followersSet.has(u.login)
       );
 
-      // Show only first 30 results
       notFollowing = notFollowing.slice(0, 30);
 
       setNotFollowingBack(notFollowing);
@@ -105,7 +97,7 @@ export default function FollowingAnalysis() {
   return (
     <div className="min-h-screen pt-20 pb-12">
       <div className="container mx-auto px-4">
-        
+
         {/* TITLE */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -129,7 +121,7 @@ export default function FollowingAnalysis() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="max-w-md mx-auto mb-12"
+          className="max-w-md mx-auto mb-10"
         >
           <form
             onSubmit={(e) => {
@@ -153,6 +145,50 @@ export default function FollowingAnalysis() {
             </Button>
           </form>
         </motion.div>
+
+        {/* ⭐ STATS CARDS */}
+        {!loading && stats.following > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+
+            {/* FOLLOWING */}
+            <div className="p-6 rounded-xl border border-border/50 bg-white dark:bg-[#0f0f0f] dark:border-white/10 text-center hover:border-primary/20 transition">
+              <div className="flex flex-col items-center gap-2">
+                <svg className="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" strokeWidth="2"
+                  viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M18 20a6 6 0 00-12 0" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                <div className="text-3xl font-bold">{stats.following}</div>
+                <p className="text-muted-foreground">Following</p>
+              </div>
+            </div>
+
+            {/* FOLLOWERS */}
+            <div className="p-6 rounded-xl border border-border/50 bg-white dark:bg-[#0f0f0f] dark:border-white/10 text-center hover:border-primary/20 transition">
+              <div className="flex flex-col items-center gap-2">
+                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="2"
+                  viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 20a5 5 0 00-10 0M12 12a5 5 0 100-10 5 5 0 000 10z" />
+                </svg>
+                <div className="text-3xl font-bold">{stats.followers}</div>
+                <p className="text-muted-foreground">Followers</p>
+              </div>
+            </div>
+
+            {/* NOT FOLLOWING BACK */}
+            <div className="p-6 rounded-xl border border-border/50 bg-white dark:bg-[#0f0f0f] dark:border-white/10 text-center hover:border-primary/20 transition">
+              <div className="flex flex-col items-center gap-2">
+                <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" strokeWidth="2"
+                  viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div className="text-3xl font-bold">{stats.notFollowingBack}</div>
+                <p className="text-muted-foreground">Not Following Back</p>
+              </div>
+            </div>
+
+          </div>
+        )}
 
         {/* RESULTS */}
         <AnimatePresence mode="wait">
@@ -188,14 +224,14 @@ export default function FollowingAnalysis() {
                           transition={{ duration: 0.3, delay: index * 0.03 }}
                           
                           className="
-                            flex items-center justify-between p-4 rounded-xl
-                            border transition
+                            flex items-center justify-between p-4 rounded-lg
+                            border border-border/50 bg-white 
+                            hover:border-primary/20 transition-colors
 
-                            /* 🌙 Dark Mode */
-                            dark:bg-[#0f0f0f] dark:border-white/5 dark:hover:bg-[#181818]
-
-                            /* ☀ Light Mode */
-                            bg-white border-gray-200 hover:bg-gray-100
+                            dark:bg-[#0f0f0f]
+                            dark:border-white/10
+                            dark:hover:bg-[#181818]
+                            dark:text-white
                           "
                         >
                           
@@ -218,16 +254,12 @@ export default function FollowingAnalysis() {
                             </div>
                           </div>
 
-                          {/* RIGHT */}
+                          {/* RIGHT SIDE */}
                           <div className="flex items-center gap-3">
                             <Badge
                               className="
                                 px-3 py-1 text-xs rounded-md
-
-                                /* Light */
                                 bg-gray-200 text-black
-
-                                /* Dark */
                                 dark:bg-white/10 dark:text-white
                               "
                             >
@@ -239,11 +271,7 @@ export default function FollowingAnalysis() {
                               target="_blank"
                               className="
                                 p-2 rounded-md transition
-
-                                /* Light */
                                 hover:bg-gray-200
-
-                                /* Dark */
                                 dark:hover:bg-white/10
                               "
                             >
