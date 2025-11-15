@@ -108,7 +108,7 @@ export default function FollowingAnalysis() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-4 mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-4xl md:text-5xl font-bold font-sans">
             Following{" "}
             <span className="bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">
               Analysis
@@ -332,7 +332,7 @@ export default function FollowingAnalysis() {
         >
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2 font-sans font-bold">
                 <AlertCircle className="h-5 w-5" />
                 How It Works
               </CardTitle>
