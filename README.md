@@ -1,8 +1,10 @@
-# GitHub Tools Pro
+# GitHub Devloper Tools
+
+![Banner](public/GithubDevloperTools-cover.png)
 
 A comprehensive suite of GitHub tools for developers, built with Next.js and modern web technologies. Analyze followers, design stunning profiles, compare statistics, and master Git with our comprehensive documentation.
 
-## 🚀 Features
+## Features
 
 ### GitHub Analytics
 - **Follower Counter**: Real-time GitHub follower tracking with detailed insights
