@@ -17,6 +17,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Search, ExternalLink, TrendingDown } from "lucide-react";
 import { toast } from "sonner";
 
+// FETCH PAGINATED DATA
 async function fetchAllPages(url: string) {
   let results: any[] = [];
   let page = 1;
@@ -94,8 +95,10 @@ export default function FollowingAnalysis() {
   };
 
   return (
-    <div className="min-h-screen pt-20 pb-12">
+    <div className="min-h-screen pt-20 pb-12 relative">
       <div className="container mx-auto px-4">
+
+        {/* TITLE */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -113,6 +116,7 @@ export default function FollowingAnalysis() {
           </p>
         </motion.div>
 
+        {/* INPUT */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -142,6 +146,14 @@ export default function FollowingAnalysis() {
           </form>
         </motion.div>
 
+        {/* 🔥 FULL SCREEN LOADER */}
+        {loading && (
+          <div className="fixed inset-0 flex justify-center items-center bg-black/50 backdrop-blur-sm z-50">
+            <div className="h-12 w-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        )}
+
+        {/* RESULTS */}
         <AnimatePresence mode="wait">
           {!loading && stats.notFollowingBack > 0 && (
             <motion.div
@@ -176,11 +188,9 @@ export default function FollowingAnalysis() {
                             flex items-center justify-between p-4 rounded-lg
                             border border-border/50 bg-white
                             hover:border-primary/20 transition-colors
-
                             dark:bg-[#0f0f0f]
                             dark:border-white/10
                             dark:hover:bg-[#181818]
-                            dark:text-white
                           "
                         >
                           <div className="flex items-center gap-4">
@@ -192,37 +202,26 @@ export default function FollowingAnalysis() {
                             </Avatar>
 
                             <div>
-                              <div className="font-medium text-gray-900 dark:text-white">
+                              <div className="font-medium dark:text-white">
                                 {user.name || user.login}
                               </div>
-                              <div className="text-sm text-gray-500 dark:text-neutral-400">
+                              <div className="text-sm text-muted-foreground">
                                 @{user.login}
                               </div>
                             </div>
                           </div>
 
                           <div className="flex items-center gap-3">
-                            <Badge
-                              className="
-                                px-3 py-1 text-xs rounded-md
-                                bg-gray-200 text-black
-
-                                dark:bg-white/10 dark:text-white
-                              "
-                            >
+                            <Badge className="px-3 py-1 text-xs dark:bg-white/10">
                               followers
                             </Badge>
 
                             <a
                               href={user.html_url}
                               target="_blank"
-                              className="
-                                p-2 rounded-md transition
-                                hover:bg-gray-200
-                                dark:hover:bg-white/10
-                              "
+                              className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-white/10"
                             >
-                              <ExternalLink className="w-4 h-4 text-black dark:text-white" />
+                              <ExternalLink className="w-4 h-4 dark:text-white" />
                             </a>
                           </div>
                         </motion.div>
