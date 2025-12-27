@@ -1765,7 +1765,7 @@ fi</code></pre>
       ]
     }
   }
-}
+};
 
 export default function Documentation() {
   const [selectedSection, setSelectedSection] = useState<string>('getting-started');
@@ -1841,17 +1841,49 @@ export default function Documentation() {
                               exit={{ opacity: 0, height: 0 }}
                               className="ml-7 mt-1 space-y-1"
                             >
-                              {section.chapters.map((chapter) => (
-                                <Button
+                              {section.chapters.map((chapter, index) => (
+                                <motion.div
                                   key={chapter}
-                                  variant={selectedChapter === chapter ? "default" : "ghost"}
-                                  size="sm"
-                                  className="w-full justify-start text-xs"
-                                  onClick={() => setSelectedChapter(chapter)}
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{
+                                    duration: 0.3,
+                                    delay: index * 0.05,
+                                    type: "spring",
+                                    stiffness: 100
+                                  }}
                                 >
-                                  <ChevronRight className="h-3 w-3 mr-2" />
-                                  {chapter}
-                                </Button>
+                                  <Button
+                                    variant={selectedChapter === chapter ? "default" : "ghost"}
+                                    size="sm"
+                                    className={`w-full justify-start text-xs transition-all duration-300 ease-in-out ${selectedChapter === chapter
+                                      ? "shadow-md scale-105 bg-gradient-to-r from-blue-500 to-purple-600 text-white"
+                                      : "hover:scale-102 hover:shadow-sm"
+                                      }`}
+                                    onClick={() => {
+                                      // Add smooth transition with a slight delay
+                                      setTimeout(() => setSelectedChapter(chapter), 50);
+                                    }}
+                                  >
+                                    <motion.div
+                                      animate={{
+                                        rotate: selectedChapter === chapter ? 90 : 0,
+                                        scale: selectedChapter === chapter ? 1.1 : 1
+                                      }}
+                                      transition={{ duration: 0.2 }}
+                                    >
+                                      <ChevronRight className="h-3 w-3 mr-2" />
+                                    </motion.div>
+                                    <motion.span
+                                      animate={{
+                                        fontWeight: selectedChapter === chapter ? 600 : 400
+                                      }}
+                                      transition={{ duration: 0.2 }}
+                                    >
+                                      {chapter}
+                                    </motion.span>
+                                  </Button>
+                                </motion.div>
                               ))}
                             </motion.div>
                           )}
@@ -1873,27 +1905,95 @@ export default function Documentation() {
           >
             <Card className="min-h-[600px]">
               <CardHeader>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                <motion.div
+                  className="flex items-center gap-2 text-sm text-muted-foreground mb-2"
+                  key={`breadcrumb-${selectedChapter}`}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
                   {currentSection && (
                     <>
-                      <span>{currentSection.title}</span>
-                      <ChevronRight className="h-4 w-4" />
-                      <span>{selectedChapter}</span>
+                      <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3, delay: 0.1 }}
+                      >
+                        {currentSection.title}
+                      </motion.span>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: 0.2 }}
+                      >
+                        <ChevronRight className="h-4 w-4" />
+                      </motion.div>
+                      <motion.span
+                        initial={{ opacity: 0, x: 10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: 0.3 }}
+                      >
+                        {selectedChapter}
+                      </motion.span>
                     </>
                   )}
-                </div>
-                <CardTitle className="text-2xl">{selectedChapter}</CardTitle>
+                </motion.div>
+
+                <motion.div
+                  key={`title-${selectedChapter}`}
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{
+                    duration: 0.5,
+                    ease: "easeOut",
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                >
+                  <CardTitle className="text-2xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    {selectedChapter}
+                  </CardTitle>
+                </motion.div>
+
                 {currentSection && (
-                  <CardDescription className="flex items-center gap-2">
-                    <currentSection.icon className="h-4 w-4" />
-                    {currentSection.description}
-                  </CardDescription>
+                  <motion.div
+                    key={`description-${selectedChapter}`}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.2 }}
+                  >
+                    <CardDescription className="flex items-center gap-2">
+                      <motion.div
+                        initial={{ rotate: -180, opacity: 0 }}
+                        animate={{ rotate: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                      >
+                        <currentSection.icon className="h-4 w-4" />
+                      </motion.div>
+                      {currentSection.description}
+                    </CardDescription>
+                  </motion.div>
                 )}
               </CardHeader>
-              <CardContent className="space-y-6">
+              <motion.div
+                className="space-y-6"
+                key={`content-${selectedChapter}`}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                  staggerChildren: 0.1
+                }}
+              >
                 {currentContent ? (
                   <>
-                    <div className="prose prose-sm max-w-none dark:prose-invert">
+                    <motion.div
+                      className="prose prose-sm max-w-none dark:prose-invert"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.4, delay: 0.2 }}
+                    >
                       <div
                         dangerouslySetInnerHTML={{
                           __html: currentContent.content
@@ -1905,55 +2005,107 @@ export default function Documentation() {
                             .replace(/`(.*?)`/g, '<code>$1</code>')
                         }}
                       />
-                    </div>
+                    </motion.div>
 
                     {currentContent.commands && (
                       <>
-                        <Separator />
-                        <div>
+                        <motion.div
+                          initial={{ opacity: 0, scaleX: 0 }}
+                          animate={{ opacity: 1, scaleX: 1 }}
+                          transition={{ duration: 0.4, delay: 0.4 }}
+                        >
+                          <Separator />
+                        </motion.div>
+
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: 0.5 }}
+                        >
                           <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                            <Terminal className="h-5 w-5" />
+                            <motion.div
+                              initial={{ rotate: -90, opacity: 0 }}
+                              animate={{ rotate: 0, opacity: 1 }}
+                              transition={{ duration: 0.4, delay: 0.6 }}
+                            >
+                              <Terminal className="h-5 w-5" />
+                            </motion.div>
                             Common Commands
                           </h3>
+
                           <div className="space-y-3">
                             {currentContent.commands.map((cmd, index) => (
                               <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.3, delay: index * 0.1 }}
-                                className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
+                                key={`${selectedChapter}-cmd-${index}`}
+                                initial={{ opacity: 0, x: -20, scale: 0.9 }}
+                                animate={{ opacity: 1, x: 0, scale: 1 }}
+                                transition={{
+                                  duration: 0.4,
+                                  delay: 0.6 + index * 0.1,
+                                  type: "spring",
+                                  stiffness: 100
+                                }}
+                                className="flex items-center justify-between p-3 bg-muted/50 rounded-lg hover:bg-muted/70 transition-all duration-300 hover:shadow-md"
                               >
                                 <div className="flex-1">
-                                  <code className="text-sm font-mono bg-background px-2 py-1 rounded">
+                                  <motion.code
+                                    className="text-sm font-mono bg-background px-2 py-1 rounded hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200"
+                                    whileHover={{ scale: 1.02 }}
+                                  >
                                     {cmd.command}
-                                  </code>
-                                  <p className="text-sm text-muted-foreground mt-1">
+                                  </motion.code>
+                                  <motion.p
+                                    className="text-sm text-muted-foreground mt-1"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
+                                  >
                                     {cmd.description}
-                                  </p>
+                                  </motion.p>
                                 </div>
-                                <Button variant="ghost" size="sm">
-                                  <Code className="h-4 w-4" />
-                                </Button>
+                                <motion.div
+                                  whileHover={{ scale: 1.1, rotate: 5 }}
+                                  whileTap={{ scale: 0.95 }}
+                                >
+                                  <Button variant="ghost" size="sm">
+                                    <Code className="h-4 w-4" />
+                                  </Button>
+                                </motion.div>
                               </motion.div>
                             ))}
                           </div>
-                        </div>
+                        </motion.div>
                       </>
                     )}
                   </>
                 ) : (
-                  <div className="text-center py-12 space-y-4">
-                    <BookOpen className="h-16 w-16 mx-auto text-muted-foreground" />
-                    <div className="space-y-2">
+                  <motion.div
+                    className="text-center py-12 space-y-4"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
+                  >
+                    <motion.div
+                      initial={{ rotate: -180, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                      <BookOpen className="h-16 w-16 mx-auto text-muted-foreground" />
+                    </motion.div>
+                    <motion.div
+                      className="space-y-2"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.4 }}
+                    >
                       <h3 className="text-lg font-semibold">Content Coming Soon</h3>
                       <p className="text-muted-foreground">
                         This chapter is being written. Check back soon for detailed content!
                       </p>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
                 )}
-              </CardContent>
+              </motion.div>
             </Card>
           </motion.div>
         </div>
