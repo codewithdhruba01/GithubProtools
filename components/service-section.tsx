@@ -20,14 +20,14 @@ export function ServiceSection() {
   ];
 
   return (
-    <section className="bg-black text-white py-16 px-6 border-t border-b border-white/5 my-12">
-      <div className="max-w-5xl mx-auto">
+    <section className="bg-background text-foreground py-16 px-6 border-t border-b border-border my-12">
+      <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col space-y-4">
-              <span className="text-sm font-medium text-gray-500">{step.number}</span>
-              <h3 className="text-xl font-bold text-white tracking-wide">{step.title}</h3>
-              <p className="text-gray-400 leading-relaxed text-sm pr-4">
+              <span className="text-sm font-medium text-muted-foreground">{step.number}</span>
+              <h3 className="text-xl font-bold text-foreground tracking-wide">{step.title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
                 {step.description}
               </p>
             </div>

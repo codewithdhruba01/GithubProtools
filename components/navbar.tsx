@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { X, ArrowRight, Github } from 'lucide-react';
+import { X, Github } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { cn } from '@/lib/utils';
 
@@ -19,15 +19,15 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-black text-white py-4 px-6 border-b border-white/5">
+    <nav className="sticky top-0 z-50 w-full bg-background border-b border-border py-4 px-6">
       <div className="max-w-[1400px] mx-auto flex items-center justify-between">
         {/* Left side: Logo */}
         <div className="flex-1 flex justify-start">
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white text-black transition-transform group-hover:scale-105">
+            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-foreground text-background transition-transform group-hover:scale-105">
               <Github className="w-5 h-5" />
             </div>
-            <span className="font-medium text-lg tracking-wide">
+            <span className="font-medium text-lg tracking-wide text-foreground">
               GitHub Pro
             </span>
           </Link>
@@ -42,8 +42,8 @@ export function Navbar() {
                 key={item.name} 
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-white",
-                  isActive ? "text-white" : "text-gray-400"
+                  "text-sm font-medium transition-colors hover:text-foreground",
+                  isActive ? "text-foreground" : "text-muted-foreground"
                 )}
               >
                 {item.name}
@@ -53,12 +53,12 @@ export function Navbar() {
         </div>
 
         {/* Right side: Actions */}
-        <div className="flex-1 flex items-center justify-end space-x-6 text-gray-300">
-          <button className="hover:text-white transition-colors" aria-label="Close">
+        <div className="flex-1 flex items-center justify-end space-x-6 text-muted-foreground">
+          <button className="hover:text-foreground transition-colors" aria-label="Close">
             <X className="h-5 w-5" strokeWidth={1.5} />
           </button>
           
-          <div className="hover:text-white transition-colors flex items-center justify-center scale-90">
+          <div className="hover:text-foreground transition-colors flex items-center justify-center scale-90">
             <ThemeToggle />
           </div>
         </div>
