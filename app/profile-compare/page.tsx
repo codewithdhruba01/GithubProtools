@@ -493,21 +493,21 @@ export default function ProfileCompare() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
             <div className="flex flex-col space-y-4 text-left">
               <span className="text-sm font-medium text-muted-foreground">01</span>
-              <h3 className="text-xl font-bold text-foreground tracking-wide">Enter Usernames</h3>
+              <h3 className="text-lg font-medium text-foreground">Enter Usernames</h3>
               <p className="text-muted-foreground leading-relaxed text-sm pr-4">
                 Type two different GitHub usernames to compare.
               </p>
             </div>
             <div className="flex flex-col space-y-4 text-left">
               <span className="text-sm font-medium text-muted-foreground">02</span>
-              <h3 className="text-xl font-bold text-foreground tracking-wide">View Comparison</h3>
+              <h3 className="text-lg font-medium text-foreground">View Comparison</h3>
               <p className="text-muted-foreground leading-relaxed text-sm pr-4">
                 See detailed metrics and overall scores for both users.
               </p>
             </div>
             <div className="flex flex-col space-y-4 text-left">
               <span className="text-sm font-medium text-muted-foreground">03</span>
-              <h3 className="text-xl font-bold text-foreground tracking-wide">Get Insights</h3>
+              <h3 className="text-lg font-medium text-foreground">Get Insights</h3>
               <p className="text-muted-foreground leading-relaxed text-sm pr-4">
                 Receive personalized improvement suggestions based on stats.
               </p>

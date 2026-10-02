@@ -15,7 +15,7 @@ export function ServiceSection() {
     {
       number: "03",
       title: "Profile Compare",
-      description: "Compare GitHub profiles head-to-head and get actionable insights for improvement."
+      description: "Compare GitHub profiles head-to-head and get actionable insights."
     }
   ];
 
@@ -26,7 +26,7 @@ export function ServiceSection() {
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col space-y-4">
               <span className="text-sm font-medium text-muted-foreground">{step.number}</span>
-              <h3 className="text-xl font-bold text-foreground tracking-wide">{step.title}</h3>
+              <h3 className="text-lg font-medium text-foreground tracking-wide">{step.title}</h3>
               <p className="text-muted-foreground leading-relaxed text-sm pr-4">
                 {step.description}
               </p>

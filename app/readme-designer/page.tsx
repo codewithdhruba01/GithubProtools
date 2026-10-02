@@ -473,28 +473,28 @@ export default function ReadmeDesigner() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="flex flex-col space-y-4 text-left">
               <span className="text-sm font-medium text-muted-foreground">01</span>
-              <h3 className="text-xl font-bold text-foreground tracking-wide">Fill Profile</h3>
+              <h3 className="text-lg font-medium text-foreground tracking-wide">Fill Profile</h3>
               <p className="text-muted-foreground leading-relaxed text-sm pr-4">
-                Add your personal information and social links to start.
+                Add your personal information and social links.
               </p>
             </div>
             <div className="flex flex-col space-y-4 text-left">
               <span className="text-sm font-medium text-muted-foreground">02</span>
-              <h3 className="text-xl font-bold text-foreground tracking-wide">Select Skills</h3>
+              <h3 className="text-lg font-medium text-foreground tracking-wide">Select Skills</h3>
               <p className="text-muted-foreground leading-relaxed text-sm pr-4">
                 Choose your technologies and tools to showcase.
               </p>
             </div>
             <div className="flex flex-col space-y-4 text-left">
               <span className="text-sm font-medium text-muted-foreground">03</span>
-              <h3 className="text-xl font-bold text-foreground tracking-wide">Preview & Download</h3>
+              <h3 className="text-lg font-medium text-foreground tracking-wide">Preview & Download</h3>
               <p className="text-muted-foreground leading-relaxed text-sm pr-4">
-                Review your generated README and download the file.
+                Review your generated README and download.
               </p>
             </div>
             <div className="flex flex-col space-y-4 text-left">
               <span className="text-sm font-medium text-muted-foreground">04</span>
-              <h3 className="text-xl font-bold text-foreground tracking-wide">Upload to GitHub</h3>
+              <h3 className="text-lg font-medium text-foreground tracking-wide">Upload to GitHub</h3>
               <p className="text-muted-foreground leading-relaxed text-sm pr-4">
                 Create a repository with your username and upload.
               </p>
