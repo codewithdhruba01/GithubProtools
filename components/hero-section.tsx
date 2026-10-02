@@ -44,7 +44,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4 }}
-        className="w-full max-w-4xl mx-auto mt-20 relative"
+        className="w-full max-w-3xl mx-auto mt-20 relative"
       >
         {/* Placeholder for the image comparison tool shown in the design */}
         <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-border shadow-[0_0_50px_rgba(168,85,247,0.15)] dark:shadow-[0_0_50px_rgba(168,85,247,0.15)]">
