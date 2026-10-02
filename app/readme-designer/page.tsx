@@ -202,7 +202,7 @@ export default function ReadmeDesigner() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
           {/* Design Panel */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
