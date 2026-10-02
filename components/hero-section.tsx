@@ -34,7 +34,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="pt-6"
         >
-          <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8 py-6 text-base font-semibold">
+          <Button variant="hero" size="hero">
             Explore Tools
           </Button>
         </motion.div>
