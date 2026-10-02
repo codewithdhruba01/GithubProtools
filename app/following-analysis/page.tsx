@@ -95,23 +95,20 @@ export default function FollowingAnalysis() {
   };
 
   return (
-    <div className="min-h-screen pt-20 pb-12 relative">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen pt-20 pb-12 relative bg-background text-foreground">
+      <div className="max-w-4xl mx-auto px-6">
 
         {/* TITLE */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-center space-y-3 mb-12"
+          className="text-center space-y-4 mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold">
-            Following{" "}
-            <span className="bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">
-              Analysis
-            </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl leading-tight font-medium text-foreground tracking-tight mb-6">
+            Following Analysis
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base text-foreground/60 leading-relaxed mb-8 max-w-md mx-auto">
             Check who doesn’t follow you back on GitHub
           </p>
         </motion.div>
@@ -136,7 +133,7 @@ export default function FollowingAnalysis() {
               onChange={(e) => setUsername(e.target.value)}
               disabled={loading}
             />
-            <Button disabled={loading}>
+            <Button variant="hero" size="hero" disabled={loading} className="px-6">
               {loading ? (
                 <div className="animate-spin h-4 w-4 border-b-2 border-white rounded-full"></div>
               ) : (
