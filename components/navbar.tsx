@@ -19,7 +19,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-background border-b border-border py-4 px-6">
+    <nav className="sticky top-0 z-50 w-full bg-background py-4 px-6">
       <div className="max-w-[1400px] mx-auto flex items-center justify-between">
         {/* Left side: Logo */}
         <div className="flex-1 flex justify-start">

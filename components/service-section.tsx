@@ -20,8 +20,8 @@ export function ServiceSection() {
   ];
 
   return (
-    <section className="bg-background text-foreground py-16 px-6 border-t border-b border-border my-12">
-      <div className="max-w-4xl mx-auto">
+    <section className="bg-background text-foreground px-6 my-12">
+      <div className="max-w-4xl mx-auto border-t border-b border-border py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col space-y-4">

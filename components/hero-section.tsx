@@ -12,7 +12,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl leading-tight font-medium text-foreground tracking-tight mb-6"
         >
           Level up your GitHub.<br />
           Build a stunning profile.
@@ -22,7 +22,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto"
+          className="text-base text-foreground/60 leading-relaxed mb-8 max-w-md mx-auto"
         >
           Complete suite of advanced GitHub tools for developers.<br className="hidden md:block" />
           Analyze followers, design stunning READMEs, and compare statistics.
