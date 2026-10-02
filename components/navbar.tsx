@@ -13,8 +13,7 @@ import {
   Users, 
   FileText, 
   GitCompare, 
-  Home,
-  BookOpen 
+  Home
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -24,7 +23,6 @@ const navigation = [
   { name: 'README', href: '/readme-designer', icon: FileText },
   { name: 'Analysis', href: '/following-analysis', icon: Users },
   { name: 'Compare', href: '/profile-compare', icon: GitCompare },
-  { name: 'Documentation', href: '/documentation', icon: BookOpen },
 ];
 
 export function Navbar() {

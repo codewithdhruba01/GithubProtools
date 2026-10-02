@@ -9,7 +9,6 @@ import {
   Users, 
   FileText, 
   GitCompare, 
-  BookOpen,
   Star,
   TrendingUp,
   Zap,
@@ -47,13 +46,6 @@ const features = [
     description: "Compare GitHub profiles and get insights on areas for improvement.",
     href: "/profile-compare",
     color: "text-orange-500"
-  },
-  {
-    icon: BookOpen,
-    title: "Documentation",
-    description: "Comprehensive Git and GitHub learning resources with step-by-step guides.",
-    href: "/documentation",
-    color: "text-red-500"
   }
 ];
 
@@ -93,9 +85,9 @@ export default function Home() {
                   Pro
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Complete suite of advanced GitHub tools for developers. Analyze followers, design stunning profiles, 
-                compare statistics, and master Git with our comprehensive documentation.
+                and compare statistics.
               </p>
             </motion.div>
 
@@ -109,12 +101,6 @@ export default function Home() {
                 <Button size="lg" className="group">
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-              <Link href="/documentation">
-                <Button variant="outline" size="lg">
-                  <BookOpen className="mr-2 h-4 w-4" />
-                  Learn Git/GitHub
                 </Button>
               </Link>
             </motion.div>

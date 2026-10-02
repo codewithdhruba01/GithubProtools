@@ -14,8 +14,7 @@ import {
   Zap, 
   Users,
   FileText,
-  GitCompare,
-  BookOpen
+  GitCompare
 } from 'lucide-react';
 
 const faqCategories = [
@@ -26,7 +25,7 @@ const faqCategories = [
     faqs: [
       {
         question: 'What is GitHub Tools Pro?',
-        answer: 'GitHub Tools Pro is a comprehensive suite of tools designed to help developers analyze their GitHub profiles, track followers, create professional READMEs, and learn Git/GitHub through detailed documentation. All tools are free to use and require no registration.'
+        answer: 'GitHub Tools Pro is a comprehensive suite of tools designed to help developers analyze their GitHub profiles, track followers, and create professional READMEs. All tools are free to use and require no registration.'
       },
       {
         question: 'Do I need to create an account to use the tools?',
@@ -154,29 +153,6 @@ const faqCategories = [
       {
         question: 'Are the improvement suggestions personalized?',
         answer: 'Yes! Based on the comparison results, we provide specific suggestions tailored to each profile\'s weaknesses, such as increasing repository count or improving follower engagement.'
-      }
-    ]
-  },
-  {
-    id: 'documentation',
-    title: 'Documentation',
-    icon: BookOpen,
-    faqs: [
-      {
-        question: 'Is the documentation suitable for beginners?',
-        answer: 'Yes! Our documentation starts with absolute basics like "What is Git?" and progressively covers more advanced topics. Each section includes practical examples and common use cases.'
-      },
-      {
-        question: 'Can I suggest new topics for the documentation?',
-        answer: 'Absolutely! We welcome community input. You can suggest new topics, improvements, or corrections through our GitHub repository or contact us directly.'
-      },
-      {
-        question: 'Are the code examples tested?',
-        answer: 'Yes, all command examples and code snippets in our documentation are tested and verified to work with current versions of Git and GitHub.'
-      },
-      {
-        question: 'Can I contribute to the documentation?',
-        answer: 'We encourage contributions! You can submit pull requests with improvements, new content, or corrections. Check our contribution guidelines on GitHub for more details.'
       }
     ]
   },

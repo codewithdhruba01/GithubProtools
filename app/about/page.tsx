@@ -9,7 +9,6 @@ import {
   Users, 
   FileText, 
   GitCompare, 
-  BookOpen,
   GitCompareArrows,
   Heart,
   Zap,
@@ -38,12 +37,6 @@ const features = [
     color: "text-purple-500",
     title: "Profile Comparison",
     description: "Compare GitHub profiles side-by-side with improvement suggestions."
-  },
-  {
-    icon: BookOpen,
-    color: "text-pink-500",
-    title: "Comprehensive Documentation",
-    description: "Complete Git and GitHub learning resources with step-by-step guides."
   }
 ];
 

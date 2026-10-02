@@ -20,7 +20,6 @@ const footerLinks: Record<string, FooterLink[]> = {
     { name: "Profile Compare", href: "/profile-compare" },
   ],
   Resources: [
-    { name: "Documentation", href: "/documentation" },
     { name: "FAQ", href: "/faq" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },

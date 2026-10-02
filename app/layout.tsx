@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/sonner";
 export const metadata: Metadata = {
   title: "GitHub Tools Pro - GitHub Analytics",
   description:
-    "Advanced GitHub tools for developers - follower analytics, README designer, profile comparison, and comprehensive Git documentation.",
+    "Advanced GitHub tools for developers - follower analytics, README designer, and profile comparison.",
 };
 
 export default function RootLayout({
