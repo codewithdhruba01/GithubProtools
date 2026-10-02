@@ -185,7 +185,7 @@ export default function ProfileCompare() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-2xl mx-auto mb-12"
+          className="max-w-lg mx-auto mb-12"
         >
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="flex flex-col md:flex-row gap-2">
@@ -209,14 +209,16 @@ export default function ProfileCompare() {
                 disabled={loading}
               />
             </div>
-            <Button type="submit" disabled={loading} className="w-full">
-              {loading ? (
-                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
-              ) : (
-                <Search className="h-4 w-4 mr-2" />
-              )}
-              Compare Profiles
-            </Button>
+            <div className="flex justify-center pt-2">
+              <Button variant="hero" size="hero" type="submit" disabled={loading} className="w-full md:w-auto">
+                {loading ? (
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+                ) : (
+                  <Search className="h-4 w-4 mr-2" />
+                )}
+                Compare Profiles
+              </Button>
+            </div>
           </form>
         </motion.div>
 
@@ -486,35 +488,31 @@ export default function ProfileCompare() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-4xl mx-auto mt-12"
+          className="max-w-4xl mx-auto mt-20 border-t border-b border-border py-16"
         >
-          <Card>
-            <CardHeader>
-              <CardTitle>How to Use Profile Compare</CardTitle>
-              <CardDescription>
-                Get the most out of the GitHub profile comparison tool
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="text-center space-y-2">
-                  <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto font-bold">1</div>
-                  <h4 className="font-semibold">Enter Usernames</h4>
-                  <p className="text-sm text-muted-foreground">Type two different GitHub usernames to compare</p>
-                </div>
-                <div className="text-center space-y-2">
-                  <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto font-bold">2</div>
-                  <h4 className="font-semibold">View Comparison</h4>
-                  <p className="text-sm text-muted-foreground">See detailed metrics and overall scores</p>
-                </div>
-                <div className="text-center space-y-2">
-                  <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto font-bold">3</div>
-                  <h4 className="font-semibold">Get Insights</h4>
-                  <p className="text-sm text-muted-foreground">Receive personalized improvement suggestions</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+            <div className="flex flex-col space-y-4 text-left">
+              <span className="text-sm font-medium text-muted-foreground">01</span>
+              <h3 className="text-xl font-bold text-foreground tracking-wide">Enter Usernames</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+                Type two different GitHub usernames to compare.
+              </p>
+            </div>
+            <div className="flex flex-col space-y-4 text-left">
+              <span className="text-sm font-medium text-muted-foreground">02</span>
+              <h3 className="text-xl font-bold text-foreground tracking-wide">View Comparison</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+                See detailed metrics and overall scores for both users.
+              </p>
+            </div>
+            <div className="flex flex-col space-y-4 text-left">
+              <span className="text-sm font-medium text-muted-foreground">03</span>
+              <h3 className="text-xl font-bold text-foreground tracking-wide">Get Insights</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+                Receive personalized improvement suggestions based on stats.
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>
