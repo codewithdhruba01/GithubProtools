@@ -186,26 +186,23 @@ export default function ReadmeDesigner() {
   };
 
   return (
-    <div className="min-h-screen pt-20 pb-12">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen pt-20 pb-12 bg-background text-foreground">
+      <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center space-y-4 mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold">
-            README{" "}
-            <span className="bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent">
-              Designer
-            </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl leading-tight font-medium text-foreground tracking-tight mb-6">
+            README Designer
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-foreground/60 leading-relaxed mb-8 max-w-md mx-auto">
             Create stunning GitHub profile READMEs with skills, stats, and social icons
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 gap-8">
           {/* Design Panel */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -471,40 +468,38 @@ export default function ReadmeDesigner() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="max-w-4xl mx-auto mt-12"
+          className="max-w-4xl mx-auto mt-20 border-t border-b border-border py-16"
         >
-          <Card>
-            <CardHeader>
-              <CardTitle>How to Use</CardTitle>
-              <CardDescription>
-                Steps to create and use your custom README
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div className="text-center space-y-2">
-                  <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto font-bold">1</div>
-                  <h4 className="font-semibold">Fill Profile</h4>
-                  <p className="text-sm text-muted-foreground">Add your personal information and social links</p>
-                </div>
-                <div className="text-center space-y-2">
-                  <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto font-bold">2</div>
-                  <h4 className="font-semibold">Select Skills</h4>
-                  <p className="text-sm text-muted-foreground">Choose your technologies and tools</p>
-                </div>
-                <div className="text-center space-y-2">
-                  <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto font-bold">3</div>
-                  <h4 className="font-semibold">Preview & Download</h4>
-                  <p className="text-sm text-muted-foreground">Review your README and download the file</p>
-                </div>
-                <div className="text-center space-y-2">
-                  <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto font-bold">4</div>
-                  <h4 className="font-semibold">Upload to GitHub</h4>
-                  <p className="text-sm text-muted-foreground">Create a repository with your username and upload</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="flex flex-col space-y-4 text-left">
+              <span className="text-sm font-medium text-muted-foreground">01</span>
+              <h3 className="text-xl font-bold text-foreground tracking-wide">Fill Profile</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+                Add your personal information and social links to start.
+              </p>
+            </div>
+            <div className="flex flex-col space-y-4 text-left">
+              <span className="text-sm font-medium text-muted-foreground">02</span>
+              <h3 className="text-xl font-bold text-foreground tracking-wide">Select Skills</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+                Choose your technologies and tools to showcase.
+              </p>
+            </div>
+            <div className="flex flex-col space-y-4 text-left">
+              <span className="text-sm font-medium text-muted-foreground">03</span>
+              <h3 className="text-xl font-bold text-foreground tracking-wide">Preview & Download</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+                Review your generated README and download the file.
+              </p>
+            </div>
+            <div className="flex flex-col space-y-4 text-left">
+              <span className="text-sm font-medium text-muted-foreground">04</span>
+              <h3 className="text-xl font-bold text-foreground tracking-wide">Upload to GitHub</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+                Create a repository with your username and upload.
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>
