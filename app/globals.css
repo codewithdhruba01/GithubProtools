@@ -1,12 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* ----------------------------
    GOOGLE FONTS IMPORT (THEME-SAFE)
 ----------------------------- */
-
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Momo+Signature&family=Momo+Trust+Display&family=Pacifico&family=Saira:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* ----------------------------
    CUSTOM FONT CLASSES (Manual Use)
