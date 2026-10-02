@@ -1,142 +1,67 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import { X, ArrowRight, Github } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { 
-  Github, 
-  Menu, 
-  X, 
-  Users, 
-  FileText, 
-  GitCompare, 
-  Home
-} from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navigation = [
-  { name: 'Home', href: '/', icon: Home },
-  { name: 'Follower', href: '/follower-counter', icon: Users },
-  { name: 'README', href: '/readme-designer', icon: FileText },
-  { name: 'Analysis', href: '/following-analysis', icon: Users },
-  { name: 'Compare', href: '/profile-compare', icon: GitCompare },
+  { name: 'Home', href: '/' },
+  { name: 'Follower', href: '/follower-counter' },
+  { name: 'README', href: '/readme-designer' },
+  { name: 'Analysis', href: '/following-analysis' },
+  { name: 'Compare', href: '/profile-compare' },
 ];
 
 export function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <motion.div
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.5 }}
-              className="rounded-full bg-primary p-2"
-            >
-              <Github className="h-6 w-6 text-primary-foreground" />
-            </motion.div>
-            <span className="hidden font-bold text-xl sm:inline-block">
-              GitHub Tools Pro
+    <nav className="sticky top-0 z-50 w-full bg-black text-white py-4 px-6 border-b border-white/5">
+      <div className="max-w-[1400px] mx-auto flex items-center justify-between">
+        {/* Left side: Logo */}
+        <div className="flex-1 flex justify-start">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white text-black transition-transform group-hover:scale-105">
+              <Github className="w-5 h-5" />
+            </div>
+            <span className="font-medium text-lg tracking-wide">
+              GitHub Pro
             </span>
           </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            {navigation.map((item) => {
-              const Icon = item.icon;
-              const isActive = pathname === item.href;
-              
-              return (
-                <Link key={item.name} href={item.href}>
-                  <Button 
-                    variant={isActive ? "default" : "ghost"} 
-                    size="sm"
-                    className={cn(
-                      "relative",
-                      isActive && "bg-primary text-primary-foreground"
-                    )}
-                  >
-                    <Icon className="h-4 w-4 mr-2" />
-                    {item.name}
-                    {isActive && (
-                      <motion.div
-                        layoutId="navbar-indicator"
-                        className="absolute inset-0 bg-primary rounded-md -z-10"
-                        initial={false}
-                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                      />
-                    )}
-                  </Button>
-                </Link>
-              );
-            })}
-          </div>
-
-          {/* Right side */}
-          <div className="flex items-center space-x-2">
-            <ThemeToggle />
-            
-            {/* Mobile menu button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <motion.div
-                animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                {mobileMenuOpen ? (
-                  <X className="h-5 w-5" />
-                ) : (
-                  <Menu className="h-5 w-5" />
-                )}
-              </motion.div>
-            </Button>
-          </div>
         </div>
 
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden border-t border-border/40"
-            >
-              <div className="py-4 space-y-2">
-                {navigation.map((item) => {
-                  const Icon = item.icon;
-                  const isActive = pathname === item.href;
-                  
-                  return (
-                    <Link key={item.name} href={item.href}>
-                      <Button 
-                        variant={isActive ? "default" : "ghost"} 
-                        size="sm"
-                        className="w-full justify-start"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <Icon className="h-4 w-4 mr-2" />
-                        {item.name}
-                      </Button>
-                    </Link>
-                  );
-                })}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Center side: Links */}
+        <div className="hidden md:flex flex-1 justify-center items-center space-x-8">
+          {navigation.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link 
+                key={item.name} 
+                href={item.href}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-white",
+                  isActive ? "text-white" : "text-gray-400"
+                )}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Right side: Actions */}
+        <div className="flex-1 flex items-center justify-end space-x-6 text-gray-300">
+          <button className="hover:text-white transition-colors" aria-label="Close">
+            <X className="h-5 w-5" strokeWidth={1.5} />
+          </button>
+          
+          <div className="hover:text-white transition-colors flex items-center justify-center scale-90">
+            <ThemeToggle />
+          </div>
+        </div>
       </div>
     </nav>
   );
