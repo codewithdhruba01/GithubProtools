@@ -94,21 +94,18 @@ export default function FollowerCounter() {
   ] : [];
 
   return (
-    <div className="min-h-screen pt-20 pb-12">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen pt-20 pb-12 bg-background text-foreground">
+      <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center space-y-4 mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold">
-            GitHub{" "}
-            <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-              Follower Counter
-            </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl leading-tight font-medium text-foreground tracking-tight mb-6">
+            GitHub Follower Counter
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-foreground/60 leading-relaxed mb-8 max-w-md mx-auto">
             Track your GitHub followers in real-time and get detailed insights about your profile
           </p>
         </motion.div>
@@ -292,35 +289,31 @@ export default function FollowerCounter() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-4xl mx-auto mt-12"
+          className="max-w-4xl mx-auto mt-20 border-t border-b border-border py-16"
         >
-          <Card>
-            <CardHeader>
-              <CardTitle>How to Use</CardTitle>
-              <CardDescription>
-                Get the most out of the GitHub Follower Counter
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="text-center space-y-2">
-                  <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto font-bold">1</div>
-                  <h4 className="font-semibold">Enter Username</h4>
-                  <p className="text-sm text-muted-foreground">Type any GitHub username in the search box</p>
-                </div>
-                <div className="text-center space-y-2">
-                  <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto font-bold">2</div>
-                  <h4 className="font-semibold">View Analytics</h4>
-                  <p className="text-sm text-muted-foreground">Get real-time follower count and profile insights</p>
-                </div>
-                <div className="text-center space-y-2">
-                  <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto font-bold">3</div>
-                  <h4 className="font-semibold">Track Progress</h4>
-                  <p className="text-sm text-muted-foreground">Monitor growth and engagement metrics</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+            <div className="flex flex-col space-y-4 text-left">
+              <span className="text-sm font-medium text-muted-foreground">01</span>
+              <h3 className="text-xl font-bold text-foreground tracking-wide">Enter Username</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+                Type any GitHub username in the search box to begin tracking.
+              </p>
+            </div>
+            <div className="flex flex-col space-y-4 text-left">
+              <span className="text-sm font-medium text-muted-foreground">02</span>
+              <h3 className="text-xl font-bold text-foreground tracking-wide">View Analytics</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+                Get real-time follower count and deep insights into their profile.
+              </p>
+            </div>
+            <div className="flex flex-col space-y-4 text-left">
+              <span className="text-sm font-medium text-muted-foreground">03</span>
+              <h3 className="text-xl font-bold text-foreground tracking-wide">Track Progress</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+                Monitor growth and engagement metrics over time effectively.
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>
