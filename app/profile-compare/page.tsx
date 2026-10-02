@@ -165,21 +165,18 @@ export default function ProfileCompare() {
   const user2Score = user2Data ? calculateOverallScore(user2Data) : 0;
 
   return (
-    <div className="min-h-screen pt-20 pb-12">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen pt-20 pb-12 bg-background text-foreground">
+      <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center space-y-4 mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold">
-            Profile{" "}
-            <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-              Compare
-            </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl leading-tight font-medium text-foreground tracking-tight mb-6">
+            Profile Compare
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-foreground/60 leading-relaxed mb-8 max-w-md mx-auto">
             Compare GitHub profiles and get insights on areas for improvement
           </p>
         </motion.div>
