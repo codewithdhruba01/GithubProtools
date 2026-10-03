@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { X, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
+import { XIcon } from './svg/XIcon';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { cn } from '@/lib/utils';
 
@@ -52,9 +53,9 @@ export function Navbar() {
 
         {/* Right side: Actions */}
         <div className="flex-1 flex items-center justify-end space-x-6 text-muted-foreground">
-          <button className="hover:text-foreground transition-colors" aria-label="Close">
-            <X className="h-5 w-5" strokeWidth={1.5} />
-          </button>
+          <a href="https://x.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors" aria-label="X (Twitter)">
+            <XIcon className="h-5 w-5" />
+          </a>
           
           <div className="hover:text-foreground transition-colors flex items-center justify-center scale-90">
             <ThemeToggle />
