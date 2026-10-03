@@ -1,12 +1,15 @@
 
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { MockProfileCard } from './mock-profile-card';
 import { AuroraBars } from './aurora-bars';
 
 export function HeroSection() {
+  const navigate = useNavigate();
+
   return (
     <section className="relative flex flex-col items-center justify-center pt-24 pb-12 px-4 bg-background text-foreground min-h-[85vh] overflow-hidden">
       <div 
@@ -45,7 +48,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="pt-6"
         >
-          <Button variant="hero" size="hero">
+          <Button variant="hero" size="hero" onClick={() => navigate('/follower-counter')}>
             Explore Tools
           </Button>
         </motion.div>
