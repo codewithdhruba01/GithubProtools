@@ -41,7 +41,7 @@ export function ThemeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="relative">
+        <button className="relative flex items-center justify-center hover:text-foreground transition-colors focus:outline-none">
           <AnimatePresence mode="wait">
             <motion.div
               key={theme}
@@ -50,11 +50,11 @@ export function ThemeToggle() {
               exit={{ scale: 0, rotate: 180 }}
               transition={{ duration: 0.2 }}
             >
-              <CurrentIcon className="h-4 w-4" />
+              <CurrentIcon className="h-5 w-5" />
             </motion.div>
           </AnimatePresence>
           <span className="sr-only">Toggle theme</span>
-        </Button>
+        </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[140px]">
         <DropdownMenuItem onClick={() => setTheme("light")} className="flex items-center gap-2">

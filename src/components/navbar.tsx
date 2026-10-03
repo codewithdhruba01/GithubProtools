@@ -18,11 +18,11 @@ export function Navbar() {
   const pathname = useLocation().pathname;
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-background py-4 px-6">
+    <nav className="sticky top-0 z-50 w-full bg-background/60 backdrop-blur-md border-b border-border/40 py-4 px-6">
       <div className="max-w-[1400px] mx-auto flex items-center justify-between">
         {/* Left side: Logo */}
         <div className="flex-1 flex justify-start">
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center space-x-3 group md:ml-4">
             <div className="flex items-center justify-center w-8 h-8 rounded-full bg-foreground text-background transition-transform group-hover:scale-105">
               <Github className="w-5 h-5" />
             </div>
@@ -52,12 +52,12 @@ export function Navbar() {
         </div>
 
         {/* Right side: Actions */}
-        <div className="flex-1 flex items-center justify-end space-x-6 text-muted-foreground">
+        <div className="flex-1 flex items-center justify-end space-x-6 text-muted-foreground md:mr-4">
           <a href="https://x.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors" aria-label="X (Twitter)">
             <XIcon className="h-5 w-5" />
           </a>
           
-          <div className="hover:text-foreground transition-colors flex items-center justify-center scale-90">
+          <div className="hover:text-foreground transition-colors flex items-center justify-center">
             <ThemeToggle />
           </div>
         </div>
