@@ -4,10 +4,20 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { MockProfileCard } from './mock-profile-card';
+import { AuroraBars } from './aurora-bars';
 
 export function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-center pt-24 pb-12 px-4 bg-background text-foreground min-h-[85vh]">
+    <section className="relative flex flex-col items-center justify-center pt-24 pb-12 px-4 bg-background text-foreground min-h-[85vh] overflow-hidden">
+      <div 
+        className="absolute inset-x-0 top-0 bottom-[15%] z-0 opacity-50 dark:opacity-100 pointer-events-none"
+        style={{ 
+          maskImage: 'linear-gradient(to bottom, white 50%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, white 50%, transparent 100%)'
+        }}
+      >
+        <AuroraBars />
+      </div>
       <div className="text-center space-y-6 max-w-3xl mx-auto z-10">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}

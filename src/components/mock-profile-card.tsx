@@ -1,9 +1,19 @@
 import React from 'react';
 import { Users, UserPlus, GitBranch, Activity, MapPin, Link as LinkIcon, Calendar, TrendingUp } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+const chartData = [
+  { name: 'Jan', desktop: 185, mobile: 80 },
+  { name: 'Feb', desktop: 305, mobile: 200 },
+  { name: 'Mar', desktop: 235, mobile: 120 },
+  { name: 'Apr', desktop: 275, mobile: 190 },
+  { name: 'May', desktop: 210, mobile: 130 },
+  { name: 'Jun', desktop: 315, mobile: 240 },
+];
 
 export function MockProfileCard() {
   return (
-    <div className="w-full bg-background rounded-xl border border-border p-4 flex flex-col gap-3 text-left font-sans relative z-20 overflow-hidden">
+    <div className="w-full max-w-3xl mx-auto bg-background rounded-xl border border-border p-4 flex flex-col gap-3 text-left font-sans relative z-20 overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 opacity-40 dark:opacity-20 bg-cover bg-center"
@@ -62,29 +72,47 @@ export function MockProfileCard() {
         </div>
       </div>
 
-      {/* Bottom Insights Card */}
-      <div className="p-4 rounded-xl border border-border bg-background/60 backdrop-blur-md flex flex-col gap-4">
-        <div className="flex items-center gap-2">
-          <TrendingUp className="w-5 h-5 text-green-500" />
-          <h3 className="text-lg font-bold text-foreground">Profile Insights</h3>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">Account Status</h4>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-2.5 py-1 rounded-full bg-muted border border-border text-[11px] text-foreground font-medium">Active Profile</span>
-              <span className="px-2.5 py-1 rounded-full bg-muted border border-border text-[11px] text-foreground font-medium">Popular Developer</span>
-              <span className="px-2.5 py-1 rounded-full bg-muted border border-border text-[11px] text-foreground font-medium">Prolific Contributor</span>
-            </div>
+      {/* Bottom Cards Row */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Profile Insights Chart */}
+        <div className="md:col-span-2 p-4 rounded-xl border border-border bg-[#1a1b1e]/80 backdrop-blur-md flex flex-col gap-4">
+          <div className="flex items-center gap-2">
+            <TrendingUp className="w-5 h-5 text-green-500" />
+            <h3 className="text-lg font-bold text-white">Profile Insights</h3>
           </div>
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">Profile Metrics</h4>
-            <div className="space-y-1.5 text-xs text-muted-foreground">
-              <p>Follower to Following Ratio: <span className="text-foreground">2.54</span></p>
-              <p>Repos per Year: <span className="text-foreground">23</span></p>
-              <p>Last Updated: <span className="text-foreground">October 2, 2026</span></p>
-            </div>
+          <div className="h-[220px] w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="desktopGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#6495ED" stopOpacity={1} />
+                    <stop offset="100%" stopColor="#1E3A8A" stopOpacity={1} />
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#333" />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#888', fontSize: 12 }} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#888', fontSize: 12 }} ticks={[0, 80, 160, 240, 320]} />
+                <Tooltip cursor={{fill: 'rgba(255,255,255,0.05)'}} contentStyle={{backgroundColor: '#111', borderColor: '#333', color: '#fff'}} />
+                <Bar dataKey="desktop" name="Desktop" fill="url(#desktopGrad)" radius={[2, 2, 0, 0]} barSize={22} />
+                <Bar dataKey="mobile" name="Mobile" fill="#3b82f6" radius={[2, 2, 0, 0]} barSize={22} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Profile Metrics Card */}
+        <div className="p-4 rounded-xl border border-border bg-[#1a1b1e]/80 backdrop-blur-md flex flex-col h-fit">
+          <h4 className="text-base font-semibold text-white mb-4">Profile Metrics</h4>
+          <div className="space-y-3 text-sm text-zinc-400">
+            <p className="flex items-center gap-2 border-b border-white/5 pb-2">
+              <span>Follower Ratio:</span> <span className="text-white font-medium">2.54</span>
+            </p>
+            <p className="flex items-center gap-2 border-b border-white/5 pb-2">
+              <span>Repos per Year:</span> <span className="text-white font-medium">23</span>
+            </p>
+            <p className="flex items-center gap-2">
+              <span>Last Updated:</span> <span className="text-white font-medium">Oct 2, 2026</span>
+            </p>
           </div>
         </div>
       </div>
