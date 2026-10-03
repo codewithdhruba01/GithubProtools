@@ -17,7 +17,8 @@ import {
   Calendar,
   TrendingUp,
   Activity,
-  Search
+  Search,
+  ArrowRight
 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -114,24 +115,28 @@ export default function FollowerCounter() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-md mx-auto mb-12"
+          className="w-full max-w-lg mx-auto mb-12"
         >
-          <form onSubmit={handleSubmit} className="flex gap-2">
-            <Input
+          <form onSubmit={handleSubmit} className="relative flex items-center w-full">
+            <input
               type="text"
-              placeholder="Enter GitHub username..."
+              placeholder="Enter GitHub Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="flex-1"
+              className="w-full bg-[#1a1b1e]/80 border border-border/50 text-foreground placeholder:text-muted-foreground px-6 h-14 rounded-full outline-none focus:outline-none focus:ring-0 focus-visible:ring-0 focus-visible:outline-none focus:border-border/50 transition-all pr-16"
               disabled={loading}
             />
-            <Button type="submit" disabled={loading} className="px-6">
+            <button 
+              type="submit" 
+              disabled={loading} 
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-b from-white to-gray-300 text-black flex items-center justify-center shadow-sm hover:opacity-90 transition-opacity"
+            >
               {loading ? (
-                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-black border-t-transparent" />
               ) : (
-                <Search className="h-4 w-4" />
+                <ArrowRight className="h-5 w-5" strokeWidth={2} />
               )}
-            </Button>
+            </button>
           </form>
         </motion.div>
 
