@@ -14,7 +14,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Search, ExternalLink, TrendingDown } from "lucide-react";
+import { Search, ExternalLink, TrendingDown, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 
 // FETCH PAGINATED DATA
@@ -118,28 +118,34 @@ export default function FollowingAnalysis() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="max-w-md mx-auto mb-12"
+          className="w-full max-w-lg mx-auto mb-12"
         >
           <form
             onSubmit={(e) => {
               e.preventDefault();
               analyzeFollowing();
             }}
-            className="flex gap-2"
+            className="relative flex items-center w-full"
           >
-            <Input
-              placeholder="Enter GitHub username..."
+            <input
+              type="text"
+              placeholder="Enter GitHub Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              className="w-full bg-[#1a1b1e]/80 border border-border/50 text-foreground placeholder:text-muted-foreground px-6 h-14 rounded-full outline-none focus:outline-none focus:ring-0 focus-visible:ring-0 focus-visible:outline-none focus:border-border/50 transition-all pr-16"
               disabled={loading}
             />
-            <Button variant="hero" size="hero" disabled={loading} className="px-6">
+            <button 
+              type="submit" 
+              disabled={loading} 
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-b from-white to-gray-300 text-black flex items-center justify-center shadow-sm hover:opacity-90 transition-opacity"
+            >
               {loading ? (
-                <div className="animate-spin h-4 w-4 border-b-2 border-white rounded-full"></div>
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-black border-t-transparent" />
               ) : (
-                <Search className="w-4 h-4" />
+                <ArrowRight className="h-5 w-5" strokeWidth={2} />
               )}
-            </Button>
+            </button>
           </form>
         </motion.div>
 
