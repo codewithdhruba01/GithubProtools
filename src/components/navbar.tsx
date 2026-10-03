@@ -53,7 +53,7 @@ export function Navbar() {
 
         {/* Right side: Actions */}
         <div className="flex-1 flex items-center justify-end space-x-6 text-muted-foreground md:mr-4">
-          <a href="https://x.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors" aria-label="X (Twitter)">
+          <a href="https://x.com/codewithdhruba" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors" aria-label="X (Twitter)">
             <XIcon className="h-5 w-5" />
           </a>
           

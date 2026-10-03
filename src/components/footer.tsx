@@ -41,7 +41,7 @@ export function Footer() {
         {/* Right side: Credits */}
         <div className="flex-1 flex justify-center md:justify-end">
           <p className="text-sm text-muted-foreground">
-            Made by <a href="https://github.com/codewithdhruba01" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors font-medium">@codewithdhruba</a>
+            Made by <a href="https://codewithdhruba.in" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors font-medium">@codewithdhruba</a>
           </p>
         </div>
 
