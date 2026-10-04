@@ -27,6 +27,22 @@
     <meta property="twitter:title" content="Easyanlys - Advanced GitHub Tools for Developers" />
     <meta property="twitter:description" content="Complete suite of advanced GitHub tools for developers. Analyze followers, design stunning READMEs, and compare statistics." />
     <meta property="twitter:image" content="/og/home.png" />
+    <script>
+      (function() {
+        try {
+          var localTheme = localStorage.getItem('theme');
+          var themeToApply = localTheme;
+          if (!localTheme || localTheme === 'system') {
+            themeToApply = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          if (themeToApply === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
