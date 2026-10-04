@@ -19,10 +19,10 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-background/60 backdrop-blur-md border-b border-border/40 py-4 px-6">
-      <div className="max-w-[1400px] mx-auto flex items-center justify-between">
+      <div className="max-w-5xl mx-auto flex items-center justify-between">
         {/* Left side: Logo */}
         <div className="flex-1 flex justify-start">
-          <Link to="/" className="flex items-center space-x-3 md:ml-4">
+          <Link to="/" className="flex items-center space-x-3">
             <div className="flex items-center justify-center w-8 h-8 rounded-full overflow-hidden">
               <img src="/assets/logo.webp" alt="Easyanlys Logo" className="w-full h-full object-cover" />
             </div>
@@ -52,7 +52,7 @@ export function Navbar() {
         </div>
 
         {/* Right side: Actions */}
-        <div className="flex-1 flex items-center justify-end space-x-6 text-muted-foreground md:mr-4">
+        <div className="flex-1 flex items-center justify-end space-x-6 text-muted-foreground">
           <a href="https://x.com/codewithdhruba" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors" aria-label="X (Twitter)">
             <XIcon className="h-5 w-5" />
           </a>
