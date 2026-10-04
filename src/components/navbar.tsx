@@ -18,10 +18,10 @@ export function Navbar() {
   const pathname = useLocation().pathname;
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-background/60 backdrop-blur-md border-b border-border/40 py-4 px-6">
+    <nav className="sticky top-0 z-50 w-full bg-background/60 backdrop-blur-md py-4 px-6">
       <div className="max-w-5xl mx-auto flex items-center justify-between">
         {/* Left side: Logo */}
-        <div className="flex-1 flex justify-start">
+        <div className="flex justify-start">
           <Link to="/" className="flex items-center space-x-3">
             <div className="flex items-center justify-center w-8 h-8 rounded-full overflow-hidden">
               <img src="/assets/logo.webp" alt="Easyanlys Logo" className="w-full h-full object-cover" />
@@ -33,7 +33,7 @@ export function Navbar() {
         </div>
 
         {/* Center side: Links */}
-        <div className="hidden md:flex flex-1 justify-center items-center space-x-8">
+        <div className="hidden md:flex justify-center items-center space-x-8">
           {navigation.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -52,7 +52,7 @@ export function Navbar() {
         </div>
 
         {/* Right side: Actions */}
-        <div className="flex-1 flex items-center justify-end space-x-6 text-muted-foreground">
+        <div className="flex items-center justify-end space-x-6 text-muted-foreground">
           <a href="https://x.com/codewithdhruba" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors" aria-label="X (Twitter)">
             <XIcon className="h-5 w-5" />
           </a>
