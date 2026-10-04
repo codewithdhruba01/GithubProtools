@@ -91,7 +91,7 @@ export default function About() {
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               className="rounded-full bg-primary/10 p-6"
             >
-              <Github className="h-16 w-16 text-primary" />
+              <img src="/assets/logo.webp" alt="Easyanlys Logo" className="h-16 w-16" />
             </motion.div>
           </div>
           
@@ -99,7 +99,7 @@ export default function About() {
             <h1 className="text-4xl md:text-6xl font-bold">
               About{" "}
               <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-                GitHub Tools Pro
+                Easyanlys
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

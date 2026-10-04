@@ -22,12 +22,12 @@ export function Navbar() {
       <div className="max-w-[1400px] mx-auto flex items-center justify-between">
         {/* Left side: Logo */}
         <div className="flex-1 flex justify-start">
-          <Link to="/" className="flex items-center space-x-3 group md:ml-4">
-            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-foreground text-background transition-transform group-hover:scale-105">
-              <Github className="w-5 h-5" />
+          <Link to="/" className="flex items-center space-x-3 md:ml-4">
+            <div className="flex items-center justify-center w-8 h-8 rounded-full overflow-hidden">
+              <img src="/assets/logo.webp" alt="Easyanlys Logo" className="w-full h-full object-cover" />
             </div>
             <span className="font-medium text-lg tracking-wide text-foreground">
-              GitHub Pro
+              Easyanlys
             </span>
           </Link>
         </div>
