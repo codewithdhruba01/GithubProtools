@@ -491,24 +491,24 @@ export default function ProfileCompare() {
           className="max-w-4xl mx-auto mt-20 border-t border-b border-border py-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-            <div className="flex flex-col space-y-4 text-left">
-              <span className="text-sm font-medium text-muted-foreground">01</span>
-              <h3 className="text-lg font-medium text-foreground">Enter Usernames</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-medium text-muted-foreground mb-5">01</span>
+              <h3 className="text-[15px] font-bold text-foreground mb-2">Enter Usernames</h3>
+              <p className="text-muted-foreground leading-relaxed text-[13px] pr-4">
                 Type two different GitHub usernames to compare.
               </p>
             </div>
-            <div className="flex flex-col space-y-4 text-left">
-              <span className="text-sm font-medium text-muted-foreground">02</span>
-              <h3 className="text-lg font-medium text-foreground">View Comparison</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-medium text-muted-foreground mb-5">02</span>
+              <h3 className="text-[15px] font-bold text-foreground mb-2">View Comparison</h3>
+              <p className="text-muted-foreground leading-relaxed text-[13px] pr-4">
                 See detailed metrics and overall scores for both users.
               </p>
             </div>
-            <div className="flex flex-col space-y-4 text-left">
-              <span className="text-sm font-medium text-muted-foreground">03</span>
-              <h3 className="text-lg font-medium text-foreground">Get Insights</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-medium text-muted-foreground mb-5">03</span>
+              <h3 className="text-[15px] font-bold text-foreground mb-2">Get Insights</h3>
+              <p className="text-muted-foreground leading-relaxed text-[13px] pr-4">
                 Receive personalized improvement suggestions based on stats.
               </p>
             </div>

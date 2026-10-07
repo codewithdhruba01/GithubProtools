@@ -297,24 +297,24 @@ export default function FollowerCounter() {
           className="max-w-4xl mx-auto mt-20 border-t border-b border-border py-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-            <div className="flex flex-col space-y-4 text-left">
-              <span className="text-sm font-medium text-muted-foreground">01</span>
-              <h3 className="text-xl font-bold text-foreground tracking-wide">Enter Username</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-medium text-muted-foreground mb-5">01</span>
+              <h3 className="text-[15px] font-bold text-foreground mb-2">Enter Username</h3>
+              <p className="text-muted-foreground leading-relaxed text-[13px] pr-4">
                 Type any GitHub username in the search box to begin tracking.
               </p>
             </div>
-            <div className="flex flex-col space-y-4 text-left">
-              <span className="text-sm font-medium text-muted-foreground">02</span>
-              <h3 className="text-xl font-bold text-foreground tracking-wide">View Analytics</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-medium text-muted-foreground mb-5">02</span>
+              <h3 className="text-[15px] font-bold text-foreground mb-2">View Analytics</h3>
+              <p className="text-muted-foreground leading-relaxed text-[13px] pr-4">
                 Get real-time follower count and deep insights into their profile.
               </p>
             </div>
-            <div className="flex flex-col space-y-4 text-left">
-              <span className="text-sm font-medium text-muted-foreground">03</span>
-              <h3 className="text-xl font-bold text-foreground tracking-wide">Track Progress</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-medium text-muted-foreground mb-5">03</span>
+              <h3 className="text-[15px] font-bold text-foreground mb-2">Track Progress</h3>
+              <p className="text-muted-foreground leading-relaxed text-[13px] pr-4">
                 Monitor growth and engagement metrics over time effectively.
               </p>
             </div>

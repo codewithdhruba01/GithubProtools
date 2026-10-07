@@ -473,31 +473,31 @@ export default function ReadmeDesigner() {
           className="max-w-4xl mx-auto mt-20 border-t border-b border-border py-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="flex flex-col space-y-4 text-left">
-              <span className="text-sm font-medium text-muted-foreground">01</span>
-              <h3 className="text-lg font-medium text-foreground tracking-wide">Fill Profile</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-medium text-muted-foreground mb-5">01</span>
+              <h3 className="text-[15px] font-bold text-foreground mb-2">Fill Profile</h3>
+              <p className="text-muted-foreground leading-relaxed text-[13px] pr-4">
                 Add your personal information and social links.
               </p>
             </div>
-            <div className="flex flex-col space-y-4 text-left">
-              <span className="text-sm font-medium text-muted-foreground">02</span>
-              <h3 className="text-lg font-medium text-foreground tracking-wide">Select Skills</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-medium text-muted-foreground mb-5">02</span>
+              <h3 className="text-[15px] font-bold text-foreground mb-2">Select Skills</h3>
+              <p className="text-muted-foreground leading-relaxed text-[13px] pr-4">
                 Choose your technologies and tools to showcase.
               </p>
             </div>
-            <div className="flex flex-col space-y-4 text-left">
-              <span className="text-sm font-medium text-muted-foreground">03</span>
-              <h3 className="text-lg font-medium text-foreground tracking-wide">Preview & Download</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-medium text-muted-foreground mb-5">03</span>
+              <h3 className="text-[15px] font-bold text-foreground mb-2">Preview & Download</h3>
+              <p className="text-muted-foreground leading-relaxed text-[13px] pr-4">
                 Review your generated README and download.
               </p>
             </div>
-            <div className="flex flex-col space-y-4 text-left">
-              <span className="text-sm font-medium text-muted-foreground">04</span>
-              <h3 className="text-lg font-medium text-foreground tracking-wide">Upload to GitHub</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm pr-4">
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-medium text-muted-foreground mb-5">04</span>
+              <h3 className="text-[15px] font-bold text-foreground mb-2">Upload to GitHub</h3>
+              <p className="text-muted-foreground leading-relaxed text-[13px] pr-4">
                 Create a repository with your username and upload.
               </p>
             </div>
