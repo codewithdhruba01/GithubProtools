@@ -28,10 +28,10 @@ export function ServiceSection() {
       <div className="max-w-4xl mx-auto border-t border-b border-border py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {steps.map((step, index) => (
-            <Link to={step.href} key={index} className="flex flex-col space-y-4 group cursor-pointer">
-              <span className="text-sm font-medium text-muted-foreground">{step.number}</span>
-              <h3 className="text-lg font-medium text-foreground tracking-wide group-hover:text-primary transition-colors">{step.title}</h3>
-              <p className="text-muted-foreground leading-relaxed text-sm pr-4 group-hover:text-foreground transition-colors">
+            <Link to={step.href} key={index} className="flex flex-col group cursor-pointer">
+              <span className="text-sm font-medium text-muted-foreground mb-5">{step.number}</span>
+              <h3 className="text-[15px] font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{step.title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-[13px] pr-4 group-hover:text-foreground transition-colors">
                 {step.description}
               </p>
             </Link>
