@@ -76,8 +76,6 @@ export default function FollowingAnalysis() {
         (u: GitHubUser) => !followersSet.has(u.login)
       );
 
-      notFollowing = notFollowing.slice(0, 30);
-
       setNotFollowingBack(notFollowing);
 
       setStats({
@@ -174,7 +172,7 @@ export default function FollowingAnalysis() {
                     <Badge variant="secondary">{stats.notFollowingBack}</Badge>
                   </CardTitle>
                   <CardDescription>
-                    Showing top {stats.notFollowingBack} users
+                    Showing all {stats.notFollowingBack} users
                   </CardDescription>
                 </CardHeader>
 
