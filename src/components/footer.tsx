@@ -29,12 +29,6 @@ export function Footer() {
               <Link to="/following-analysis" className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">Analysis</Link>
               <Link to="/profile-compare" className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">Compare</Link>
             </nav>
-            <nav className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-              <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">Home</Link>
-              <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">About</Link>
-              <Link to="/faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">FAQ</Link>
-              <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">Contact</Link>
-            </nav>
           </div>
         </div>
 
