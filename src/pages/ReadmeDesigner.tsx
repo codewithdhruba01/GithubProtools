@@ -108,20 +108,20 @@ export default function ReadmeDesigner() {
     }
 
     // Contact Info
-    const contacts = [];
-    if (profile.location) contacts(`📍 ${profile.location}`);
-    if (profile.website) contacts(`🌐 [Website](${profile.website})`);
-    if (profile.email) contacts(`📧 ${profile.email}`);
+    const contacts: string[] = [];
+    if (profile.location) contacts.push(`📍 ${profile.location}`);
+    if (profile.website) contacts.push(`🌐 [Website](${profile.website})`);
+    if (profile.email) contacts.push(`📧 ${profile.email}`);
     
     if (contacts.length > 0) {
       content += `<p align="center">${contacts.join(' • ')}</p>\n\n`;
     }
 
     // Social Links
-    const socials = [];
-    if (profile.github) socials(`<a href="https://github.com/${profile.github}"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>`);
-    if (profile.linkedin) socials(`<a href="https://linkedin.com/in/${profile.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>`);
-    if (profile.twitter) socials(`<a href="https://twitter.com/${profile.twitter}"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"/></a>`);
+    const socials: string[] = [];
+    if (profile.github) socials.push(`<a href="https://github.com/${profile.github}"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>`);
+    if (profile.linkedin) socials.push(`<a href="https://linkedin.com/in/${profile.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>`);
+    if (profile.twitter) socials.push(`<a href="https://twitter.com/${profile.twitter}"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"/></a>`);
 
     if (socials.length > 0) {
       content += `<p align="center">\n${socials.join('\n')}\n</p>\n\n`;
