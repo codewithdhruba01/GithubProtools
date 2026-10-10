@@ -1,4 +1,4 @@
-# GitHub Devloper Tools
+# Easyanlys - Analyze your github profile
 
 ![Banner](public/GithubDevloperTools-cover.png)
 
@@ -107,38 +107,16 @@ npm run build
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-### Open Source Libraries
-- [Next.js](https://nextjs.org/) - React framework
-- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
-- [shadcn/ui](https://ui.shadcn.com/) - Component library
-- [Framer Motion](https://www.framer.com/motion/) - Animation library
-- [Lucide React](https://lucide.dev/) - Icon library
-
 ### Inspiration
 - GitHub's own tools and interfaces
 - Modern web design trends
 - Developer community feedback
 - Open source project best practices
 
-### Contributors
-Also contribute this project
-
-## 📞 Support
-
-### Getting Help
-- **Documentation**: Check our comprehensive docs
-- **FAQ**: Common questions and answers
-- **Issues**: Report bugs on GitHub
-- **Discussions**: Community discussions and feature requests
-
----
-
 <div align="center">
 
 **Built with ❤️ by Dhrubaraj Pati for developers**
 
-[Website](https://codewithdhruba.netlify.app/) • [GitHub](https://github.com/codewithdhruba01) • [Twitter](https://x.com/codewithdhruba)
+[Website](https://codewithdhruba.in/) • [GitHub](https://github.com/codewithdhruba01) • [Twitter](https://x.com/codewithdhruba)
 
 </div>
